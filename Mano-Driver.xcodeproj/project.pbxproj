@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		352BC552370A584749465F78 /* Pods_Mano_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77033788A5EA114CF4BCE9E8 /* Pods_Mano_Driver.framework */; };
+		D596E5562354EDA600FBDEDF /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */; };
 		D5BA5640234FA8D900548924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA563F234FA8D900548924 /* AppDelegate.swift */; };
 		D5BA5642234FA8D900548924 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5641234FA8D900548924 /* SceneDelegate.swift */; };
 		D5BA5647234FA8D900548924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5BA5645234FA8D900548924 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		77033788A5EA114CF4BCE9E8 /* Pods_Mano_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mano_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CA5D70EA7987F929AF6320 /* Pods-Mano-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mano-Driver.debug.xcconfig"; path = "Target Support Files/Pods-Mano-Driver/Pods-Mano-Driver.debug.xcconfig"; sourceTree = "<group>"; };
+		D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
 		D5BA563C234FA8D900548924 /* Mano-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mano-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BA563F234FA8D900548924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5BA5641234FA8D900548924 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D5BA5655234FAB9700548924 /* AvailableRides.swift */,
 				D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */,
 				D5BA565D234FB9DB00548924 /* LoginViewController.swift */,
+				D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				D5BA567A2354D2C800548924 /* AuthService.swift in Sources */,
 				D5BA565F234FB9DF00548924 /* LoginViewController.swift in Sources */,
 				D5BA5672234FBD0D00548924 /* ViewController+Alert.swift in Sources */,
+				D596E5562354EDA600FBDEDF /* CarInfoViewController.swift in Sources */,
 				D5BA5674234FBD0D00548924 /* String+Extension.swift in Sources */,
 				D5BA5667234FBC8500548924 /* Ride.swift in Sources */,
 				D5BA5663234FBC6800548924 /* ColectionKeys.swift in Sources */,

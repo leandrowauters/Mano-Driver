@@ -150,7 +150,8 @@ class CreateAccountViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func createAccount(_ sender: Any) {
-        createNewUser()
+        let nav = self.navigationController
+        nav?.pushViewController(CarInfoViewController(), animated: true)
     }
     
 }

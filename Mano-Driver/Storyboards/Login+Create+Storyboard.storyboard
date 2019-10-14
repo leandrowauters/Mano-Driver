@@ -164,11 +164,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX2-Ri-pPc" customClass="RoundedButton" customModule="Mano_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="70" y="726" width="274" height="36"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                                <state key="normal" title="Create Account">
+                                                <state key="normal" title="Continue">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="createAccount:" destination="WDc-MA-f9m" eventType="touchUpInside" id="xTd-OI-o1s"/>
+                                                    <segue destination="JwO-pn-Ntd" kind="show" id="Ex5-1Q-5h2"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEU-Oz-gco">
@@ -333,6 +334,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5j-KD-IgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.91304347826099" y="-765.48913043478262"/>
+        </scene>
+        <!--Car Info View Controller-->
+        <scene sceneID="Nth-Px-YMo">
+            <objects>
+                <viewController id="JwO-pn-Ntd" customClass="CarInfoViewController" customModule="Mano_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uDF-X6-gdd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxy-yH-PrO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xez-I4-O9Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="q9g-Bh-0qo"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir8-fh-NbH">
+                                        <rect key="frame" x="186" y="957" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ir8-fh-NbH" secondAttribute="bottom" constant="22" id="5zX-kW-9pV"/>
+                                    <constraint firstAttribute="height" constant="1000" id="7qc-EK-beG"/>
+                                    <constraint firstItem="ir8-fh-NbH" firstAttribute="leading" secondItem="Jxy-yH-PrO" secondAttribute="leading" constant="186" id="CSA-JP-AuA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xez-I4-O9Z" secondAttribute="bottom" id="EtI-bb-9gr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xez-I4-O9Z" secondAttribute="trailing" id="M3L-10-WpW"/>
+                                    <constraint firstAttribute="trailing" secondItem="ir8-fh-NbH" secondAttribute="trailing" constant="186" id="Uy7-PQ-8J5"/>
+                                    <constraint firstItem="Xez-I4-O9Z" firstAttribute="leading" secondItem="Jxy-yH-PrO" secondAttribute="leading" id="p2O-z6-uGS"/>
+                                    <constraint firstItem="Xez-I4-O9Z" firstAttribute="top" secondItem="Jxy-yH-PrO" secondAttribute="top" id="r5z-dI-DBK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jxy-yH-PrO" firstAttribute="bottom" secondItem="lAC-dt-XN2" secondAttribute="bottom" id="7eF-YQ-GLF"/>
+                            <constraint firstItem="Jxy-yH-PrO" firstAttribute="leading" secondItem="lAC-dt-XN2" secondAttribute="leading" id="F9K-Ox-Y4f"/>
+                            <constraint firstItem="Jxy-yH-PrO" firstAttribute="top" secondItem="lAC-dt-XN2" secondAttribute="top" id="GFa-aF-n5H"/>
+                            <constraint firstItem="Xez-I4-O9Z" firstAttribute="width" secondItem="lAC-dt-XN2" secondAttribute="width" id="W63-Uw-WvD"/>
+                            <constraint firstItem="Jxy-yH-PrO" firstAttribute="trailing" secondItem="lAC-dt-XN2" secondAttribute="trailing" id="Zqu-6x-QkV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lAC-dt-XN2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RZd-CA-3Cq"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grV-xv-Dr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766.6666666666667" y="-862.50000000000011"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="XTj-Kh-o82">

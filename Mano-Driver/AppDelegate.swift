@@ -8,13 +8,20 @@
 
 import UIKit
 import GoogleMaps
+import Firebase
+import GoogleSignIn
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var authservice = AuthService()
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         GMSServices.provideAPIKey(APIClient.googleAPI)
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+    
         return true
     }
 

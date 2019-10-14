@@ -16,6 +16,23 @@
 		D5BA5656234FAB9700548924 /* AvailableRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5655234FAB9700548924 /* AvailableRides.swift */; };
 		D5BA5658234FACA600548924 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5657234FACA600548924 /* LocationManager.swift */; };
 		D5BA565A234FAE2000548924 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5659234FAE2000548924 /* APIClient.swift */; };
+		D5BA565C234FB9A600548924 /* Login+Create+Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5BA565B234FB9A600548924 /* Login+Create+Storyboard.storyboard */; };
+		D5BA565F234FB9DF00548924 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA565D234FB9DB00548924 /* LoginViewController.swift */; };
+		D5BA5660234FB9DF00548924 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */; };
+		D5BA5663234FBC6800548924 /* ColectionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5661234FBC6600548924 /* ColectionKeys.swift */; };
+		D5BA5664234FBC6800548924 /* DBService+ManoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */; };
+		D5BA5667234FBC8500548924 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5665234FBC8400548924 /* Ride.swift */; };
+		D5BA5668234FBC8500548924 /* ManoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5666234FBC8500548924 /* ManoUser.swift */; };
+		D5BA566A234FBCB900548924 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5669234FBCB900548924 /* StorageService.swift */; };
+		D5BA566D234FBCC600548924 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA566B234FBCC300548924 /* DBService.swift */; };
+		D5BA566E234FBCC600548924 /* DBService+Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA566C234FBCC500548924 /* DBService+Ride.swift */; };
+		D5BA5672234FBD0D00548924 /* ViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */; };
+		D5BA5673234FBD0D00548924 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5670234FBD0B00548924 /* Date+Extension.swift */; };
+		D5BA5674234FBD0D00548924 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5671234FBD0D00548924 /* String+Extension.swift */; };
+		D5BA5678234FBE1C00548924 /* MapsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5677234FBE1C00548924 /* MapsHelper.swift */; };
+		D5BA567A2354D2C800548924 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA56792354D2C800548924 /* AuthService.swift */; };
+		D5BA567C2354D31400548924 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA567B2354D31400548924 /* IBDesignableViews.swift */; };
+		D5BA567E2354D6EB00548924 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +48,23 @@
 		D5BA5655234FAB9700548924 /* AvailableRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AvailableRides.swift; path = "/Users/leandrowauters/Documents/XcodeProjects/Mano-Driver/Mano-Driver/AvailableRides.swift"; sourceTree = "<absolute>"; };
 		D5BA5657234FACA600548924 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		D5BA5659234FAE2000548924 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D5BA565B234FB9A600548924 /* Login+Create+Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login+Create+Storyboard.storyboard"; sourceTree = "<group>"; };
+		D5BA565D234FB9DB00548924 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D5BA5661234FBC6600548924 /* ColectionKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColectionKeys.swift; sourceTree = "<group>"; };
+		D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+ManoUser.swift"; sourceTree = "<group>"; };
+		D5BA5665234FBC8400548924 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		D5BA5666234FBC8500548924 /* ManoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManoUser.swift; sourceTree = "<group>"; };
+		D5BA5669234FBCB900548924 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D5BA566B234FBCC300548924 /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		D5BA566C234FBCC500548924 /* DBService+Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Ride.swift"; sourceTree = "<group>"; };
+		D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Alert.swift"; sourceTree = "<group>"; };
+		D5BA5670234FBD0B00548924 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		D5BA5671234FBD0D00548924 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D5BA5677234FBE1C00548924 /* MapsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsHelper.swift; sourceTree = "<group>"; };
+		D5BA56792354D2C800548924 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D5BA567B2354D31400548924 /* IBDesignableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableViews.swift; sourceTree = "<group>"; };
+		D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7BAB7CF36AE24F55B6CCDF9 /* Pods-Mano-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mano-Driver.release.xcconfig"; path = "Target Support Files/Pods-Mano-Driver/Pods-Mano-Driver.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,12 +118,29 @@
 		D5BA563E234FA8D900548924 /* Mano-Driver */ = {
 			isa = PBXGroup;
 			children = (
+				D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */,
 				D5BA563F234FA8D900548924 /* AppDelegate.swift */,
 				D5BA5641234FA8D900548924 /* SceneDelegate.swift */,
 				D5BA5655234FAB9700548924 /* AvailableRides.swift */,
 				D5BA5659234FAE2000548924 /* APIClient.swift */,
+				D5BA565B234FB9A600548924 /* Login+Create+Storyboard.storyboard */,
 				D5BA5645234FA8D900548924 /* Main.storyboard */,
 				D5BA5657234FACA600548924 /* LocationManager.swift */,
+				D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */,
+				D5BA565D234FB9DB00548924 /* LoginViewController.swift */,
+				D5BA5661234FBC6600548924 /* ColectionKeys.swift */,
+				D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */,
+				D5BA5666234FBC8500548924 /* ManoUser.swift */,
+				D5BA5665234FBC8400548924 /* Ride.swift */,
+				D5BA5669234FBCB900548924 /* StorageService.swift */,
+				D5BA566B234FBCC300548924 /* DBService.swift */,
+				D5BA5670234FBD0B00548924 /* Date+Extension.swift */,
+				D5BA5671234FBD0D00548924 /* String+Extension.swift */,
+				D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */,
+				D5BA566C234FBCC500548924 /* DBService+Ride.swift */,
+				D5BA56792354D2C800548924 /* AuthService.swift */,
+				D5BA5677234FBE1C00548924 /* MapsHelper.swift */,
+				D5BA567B2354D31400548924 /* IBDesignableViews.swift */,
 				D5BA5648234FA8DB00548924 /* Assets.xcassets */,
 				D5BA564A234FA8DB00548924 /* LaunchScreen.storyboard */,
 				D5BA564D234FA8DB00548924 /* Info.plist */,
@@ -159,6 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5BA564C234FA8DB00548924 /* LaunchScreen.storyboard in Resources */,
+				D5BA565C234FB9A600548924 /* Login+Create+Storyboard.storyboard in Resources */,
+				D5BA567E2354D6EB00548924 /* GoogleService-Info.plist in Resources */,
 				D5BA5649234FA8DB00548924 /* Assets.xcassets in Resources */,
 				D5BA5647234FA8D900548924 /* Main.storyboard in Resources */,
 			);
@@ -230,10 +283,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5BA5664234FBC6800548924 /* DBService+ManoUser.swift in Sources */,
+				D5BA566A234FBCB900548924 /* StorageService.swift in Sources */,
+				D5BA5668234FBC8500548924 /* ManoUser.swift in Sources */,
+				D5BA566E234FBCC600548924 /* DBService+Ride.swift in Sources */,
+				D5BA5660234FB9DF00548924 /* CreateAccountViewController.swift in Sources */,
+				D5BA5673234FBD0D00548924 /* Date+Extension.swift in Sources */,
+				D5BA567A2354D2C800548924 /* AuthService.swift in Sources */,
+				D5BA565F234FB9DF00548924 /* LoginViewController.swift in Sources */,
+				D5BA5672234FBD0D00548924 /* ViewController+Alert.swift in Sources */,
+				D5BA5674234FBD0D00548924 /* String+Extension.swift in Sources */,
+				D5BA5667234FBC8500548924 /* Ride.swift in Sources */,
+				D5BA5663234FBC6800548924 /* ColectionKeys.swift in Sources */,
 				D5BA5658234FACA600548924 /* LocationManager.swift in Sources */,
+				D5BA567C2354D31400548924 /* IBDesignableViews.swift in Sources */,
 				D5BA5640234FA8D900548924 /* AppDelegate.swift in Sources */,
+				D5BA566D234FBCC600548924 /* DBService.swift in Sources */,
 				D5BA5656234FAB9700548924 /* AvailableRides.swift in Sources */,
 				D5BA565A234FAE2000548924 /* APIClient.swift in Sources */,
+				D5BA5678234FBE1C00548924 /* MapsHelper.swift in Sources */,
 				D5BA5642234FA8D900548924 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

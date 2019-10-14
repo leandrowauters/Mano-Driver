@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         var rootViewController = UIViewController()
+
         if let manoUser = AppDelegate.authservice.getCurrentUser() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let availableRides = storyboard.instantiateViewController(withIdentifier: "AvailableRides") as! AvailableRides
@@ -27,7 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             let storyboard = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil)
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            rootViewController = loginViewController
+            let nav = UINavigationController.init(rootViewController: loginViewController)
+            nav.isNavigationBarHidden = true
+            rootViewController = nav
         }
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = rootViewController

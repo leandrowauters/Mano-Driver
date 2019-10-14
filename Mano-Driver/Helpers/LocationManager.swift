@@ -9,12 +9,15 @@
 import Foundation
 import GoogleMaps
 
+protocol LocationManagerDelegate: AnyObject {
+    func didUpdateLocation(_: Bool)
+}
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private var locationManager = CLLocationManager()
     public var currentLocation = CLLocation()
+    weak var delegate: LocationManagerDelegate?
 
-    
     func getUserLocation() {
         locationManager.delegate = self
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
@@ -28,7 +31,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             
         }
-        
     }
     
     func setupMap(mapView: GMSMapView){
@@ -45,10 +47,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             return
         }
         locationManager.startUpdatingLocation()
+
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.last else {return}
         self.currentLocation = currentLocation
+        delegate?.didUpdateLocation(true)
 //        let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 11.0)
         locationManager.stopUpdatingLocation()
     }

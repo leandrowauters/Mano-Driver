@@ -108,7 +108,12 @@ class LoginViewController: UIViewController {
         }
     }
 
-
+    @IBAction func signupPressed(_ sender: Any) {
+        
+        let vc = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil).instantiateViewController(identifier: "CreateAccountViewController") as CreateAccountViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

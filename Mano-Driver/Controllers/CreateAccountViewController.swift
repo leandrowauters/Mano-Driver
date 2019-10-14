@@ -147,11 +147,10 @@ class CreateAccountViewController: UIViewController {
         MapsHelper.shared.setupAutoCompeteVC(Vc: self)
     }
     @IBAction func backPressed(_ sender: UIButton) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func createAccount(_ sender: Any) {
-        let nav = self.navigationController
-        nav?.pushViewController(CarInfoViewController(), animated: true)
+        createNewUser()
     }
     
 }

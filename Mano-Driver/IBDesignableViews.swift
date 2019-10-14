@@ -22,6 +22,14 @@ class RoundedButton: UIButton {
 }
 
 @IBDesignable
+class ManoLogoLabel: UILabel {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        font = UIFont(name: "ArialRoundedMTBold", size: 50)
+        
+    }
+}
+@IBDesignable
 class AlertView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -40,6 +48,18 @@ class BorderView: UIView {
         super.layoutSubviews()
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+    }
+}
+
+@IBDesignable
+class Rounder10Button: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = 10
+        layer.borderWidth = 2
+        layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        clipsToBounds = true
         
     }
 }

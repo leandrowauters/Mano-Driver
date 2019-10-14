@@ -8,24 +8,29 @@
 import UIKit
 import GoogleMaps
 
-class AvailableRides: UIViewController {
+class AvailableRides: UIViewController, LocationManagerDelegate {
+
+    
 
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = LocationManager()
-
+    weak var locationManagerDelegate: LocationManagerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.getUserLocation()
-        
+        locationManager.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setupUI()
+        
     }
     func setupUI() {
         locationManager.setupMap(mapView: mapView)
     }
     
+    func didUpdateLocation(_: Bool) {
+       setupUI()
+    }
 
 }

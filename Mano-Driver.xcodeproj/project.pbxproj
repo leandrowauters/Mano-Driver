@@ -118,34 +118,90 @@
 		D5BA563E234FA8D900548924 /* Mano-Driver */ = {
 			isa = PBXGroup;
 			children = (
-				D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */,
-				D5BA563F234FA8D900548924 /* AppDelegate.swift */,
-				D5BA5641234FA8D900548924 /* SceneDelegate.swift */,
-				D5BA5655234FAB9700548924 /* AvailableRides.swift */,
-				D5BA5659234FAE2000548924 /* APIClient.swift */,
-				D5BA565B234FB9A600548924 /* Login+Create+Storyboard.storyboard */,
-				D5BA5645234FA8D900548924 /* Main.storyboard */,
-				D5BA5657234FACA600548924 /* LocationManager.swift */,
-				D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */,
-				D5BA565D234FB9DB00548924 /* LoginViewController.swift */,
-				D5BA5661234FBC6600548924 /* ColectionKeys.swift */,
-				D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */,
-				D5BA5666234FBC8500548924 /* ManoUser.swift */,
-				D5BA5665234FBC8400548924 /* Ride.swift */,
-				D5BA5669234FBCB900548924 /* StorageService.swift */,
-				D5BA566B234FBCC300548924 /* DBService.swift */,
-				D5BA5670234FBD0B00548924 /* Date+Extension.swift */,
-				D5BA5671234FBD0D00548924 /* String+Extension.swift */,
-				D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */,
-				D5BA566C234FBCC500548924 /* DBService+Ride.swift */,
-				D5BA56792354D2C800548924 /* AuthService.swift */,
-				D5BA5677234FBE1C00548924 /* MapsHelper.swift */,
+				D5BA564D234FA8DB00548924 /* Info.plist */,
+				D5BA567F2354E8BB00548924 /* app.settings */,
+				D5BA56802354E8E900548924 /* Controllers */,
+				D5BA56812354E8FF00548924 /* Storyboards */,
+				D5BA56822354E91600548924 /* Helpers */,
+				D5BA56832354E97100548924 /* Firebase_Helpers */,
+				D5BA56842354E99100548924 /* Model */,
+				D5BA56852354E99E00548924 /* Extensions */,
 				D5BA567B2354D31400548924 /* IBDesignableViews.swift */,
 				D5BA5648234FA8DB00548924 /* Assets.xcassets */,
 				D5BA564A234FA8DB00548924 /* LaunchScreen.storyboard */,
-				D5BA564D234FA8DB00548924 /* Info.plist */,
 			);
 			path = "Mano-Driver";
+			sourceTree = "<group>";
+		};
+		D5BA567F2354E8BB00548924 /* app.settings */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */,
+				D5BA563F234FA8D900548924 /* AppDelegate.swift */,
+				D5BA5641234FA8D900548924 /* SceneDelegate.swift */,
+			);
+			path = app.settings;
+			sourceTree = "<group>";
+		};
+		D5BA56802354E8E900548924 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA5655234FAB9700548924 /* AvailableRides.swift */,
+				D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */,
+				D5BA565D234FB9DB00548924 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5BA56812354E8FF00548924 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA565B234FB9A600548924 /* Login+Create+Storyboard.storyboard */,
+				D5BA5645234FA8D900548924 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D5BA56822354E91600548924 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA5659234FAE2000548924 /* APIClient.swift */,
+				D5BA5677234FBE1C00548924 /* MapsHelper.swift */,
+				D5BA5657234FACA600548924 /* LocationManager.swift */,
+				D5BA5661234FBC6600548924 /* ColectionKeys.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D5BA56832354E97100548924 /* Firebase_Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */,
+				D5BA566C234FBCC500548924 /* DBService+Ride.swift */,
+				D5BA5669234FBCB900548924 /* StorageService.swift */,
+				D5BA566B234FBCC300548924 /* DBService.swift */,
+				D5BA56792354D2C800548924 /* AuthService.swift */,
+			);
+			path = Firebase_Helpers;
+			sourceTree = "<group>";
+		};
+		D5BA56842354E99100548924 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA5666234FBC8500548924 /* ManoUser.swift */,
+				D5BA5665234FBC8400548924 /* Ride.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5BA56852354E99E00548924 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA5670234FBD0B00548924 /* Date+Extension.swift */,
+				D5BA5671234FBD0D00548924 /* String+Extension.swift */,
+				D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

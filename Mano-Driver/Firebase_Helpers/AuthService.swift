@@ -39,7 +39,7 @@ final class AuthService {
             }
             else if let authDataResult = authDataResult {
                 let joinedDate = Date().dateDescription
-                let manoUser = ManoUser(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: authDataResult.user.uid, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carPicture: nil, cellPhone: phone, rides: nil)
+                let manoUser = ManoUser(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: authDataResult.user.uid, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carFrontImage: nil,carBackImage: nil, cellPhone: phone, rides: nil)
                 DBService.createUser(manoUser: manoUser, completion: { (error) in
                     if let error = error {
                         self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)
@@ -53,7 +53,7 @@ final class AuthService {
     
     public func createGoogleAccountUser(firstName: String, lastName: String, email: String, typeOfUser: String, phone: String, homeAddress: String, userId: String, homeLat: Double, homeLon: Double) {
         let joinedDate = Date().dateDescription
-        let manoUser = ManoUser(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: userId, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carPicture: nil, cellPhone: phone, rides: nil)
+        let manoUser = ManoUser(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: userId, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carFrontImage: nil, carBackImage: nil ,cellPhone: phone, rides: nil)
         DBService.createUser(manoUser: manoUser, completion: { (error) in
             if let error = error {
                 self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)

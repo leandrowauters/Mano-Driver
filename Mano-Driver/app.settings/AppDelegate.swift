@@ -11,6 +11,8 @@ import GoogleMaps
 import Firebase
 import GooglePlaces
 import GoogleSignIn
+import Toucan
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

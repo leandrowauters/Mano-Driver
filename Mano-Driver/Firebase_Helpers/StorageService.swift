@@ -19,6 +19,22 @@ final class StorageService {
         return ref
     }()
     
+    static public func postImages(imagesData: [Data], imageNames: [String], completion: @escaping (Error?, [URL]?) -> Void) {
+        let nameIndex = 0
+        var urls = [URL]()
+        imagesData.forEach { (imageData) in
+            
+            StorageService.postImage(imageData: imageData, imageName: imageNames[nameIndex]) { (error, url) in
+                if let error = error {
+                    completion(error, nil)
+                }
+                if let url = url {
+                    urls.append(url)
+                }
+            }
+        }
+        completion(nil, urls)
+    }
     static public func postImage(imageData: Data, imageName: String, completion: @escaping (Error?, URL?) -> Void) {
         let metadata = StorageMetadata()
         let imageRef = storageRef.child(StorageKeys.ImagesKey + "/\(imageName)")
@@ -55,57 +71,6 @@ final class StorageService {
         }
     }
     
-    static public func postImages(imagesData: [Data], imageName: String,  completion: @escaping(Error?, [URL]?) -> Void) {
-        var urls = [URL]()
-        var counter = 0
-        for imageData in imagesData {
-            
-            let metadata = StorageMetadata()
-            var imageRef = StorageReference()
-            if counter == 0 {
-                imageRef = storageRef.child(StorageKeys.ImagesKey + "/\(imageName)" + "car")
-            } else {
-                imageRef = storageRef.child(StorageKeys.ImagesKey + "/\(imageName)")
-            }
-            metadata.contentType = "image/jpg"
-            let uploadTask = imageRef
-                .putData(imageData, metadata: metadata) { (metadata, error) in
-                    if let error = error {
-                        print("upload task error: \(error)")
-                    } else if let _ = metadata {
-                        
-                    }
-            }
-            uploadTask.observe(.failure) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.pause) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.progress) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.resume) { (snapshot) in
-                //
-            }
-            uploadTask.observe(.success) { (snapshot) in
-                //
-                imageRef.downloadURL(completion: { (url, error) in
-                    if let error = error {
-                        completion(error, nil)
-                    } else if let url = url {
-                        if counter == 0 {
-                            urls.append(url)
-                            counter += 1
-                        } else {
-                            urls.append(url)
-                            completion(nil,urls)
-                        }
-                    }
-                })
-            }
-        }
-    }
     
 }
 

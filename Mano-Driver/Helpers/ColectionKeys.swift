@@ -26,9 +26,11 @@ struct ManoUserCollectionKeys {
     static let numberOfRides = "numberOfRides"
     static let numberOfMiles = "numberOfMiles"
     static let licencePlateKey = "licencePlate"
-    static let carPictureKey = "carPicture"
+    static let carFrontImageKey = "carFrontImage"
+    static let carBackImageKey = "carBackImage"
     static let cellPhoneKey = "cellPhone"
     static let ridesKey = "rides"
+    static let state = "state"
 }
 
 struct RideCollectionKeys {

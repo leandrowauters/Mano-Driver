@@ -25,6 +25,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var user: User?
     var googleUser = false
@@ -36,20 +37,14 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFieldDelegatesAndType()
-        setupScreenTap()
+        setupTap()
         setup()
         authservice.authserviceCreateNewAccountDelegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        registerKeyboardNotification()
-    }
+
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        unregisterKeyboardNotifications()
-    }
+
     
 
     private func setup() {
@@ -68,12 +63,9 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
-    func setupScreenTap() {
-        let screenTap = UITapGestureRecognizer.init(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(screenTap)
-    }
+
+
     func setupTextFieldDelegatesAndType() {
-        
         emailTextField.textContentType = .oneTimeCode
         passwordTextField.textContentType = .oneTimeCode
         confirmPasswordTextField.textContentType = .oneTimeCode
@@ -84,33 +76,9 @@ class CreateAccountViewController: UIViewController {
         confirmPasswordTextField.delegate = self
     }
     
-    private func registerKeyboardNotification(){
-        NotificationCenter.default.addObserver(self, selector: #selector(willShowKeyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+
     
-    @objc private func willShowKeyboard(notification: Notification){
-        guard let info = notification.userInfo,
-            let keyboardFrame = info["UIKeyboardFrameEndUserInfoKey"] as? CGRect else {
-                print("UserInfo is nil")
-                return
-        }
-        if scrollUp {
-            contentView.transform = CGAffineTransform(translationX: 0, y: -keyboardFrame.height)
-        }
-    }
-    
-    @objc private func willHideKeyboard(){
-        contentView.transform = CGAffineTransform.identity
-    }
-    
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
-    
-    private func unregisterKeyboardNotifications(){
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-    }
+
 
     private func createNewUser(){
         guard let email = emailTextField.text,
@@ -135,9 +103,9 @@ class CreateAccountViewController: UIViewController {
             showAlert(title: "Passwords do not match", message: "Try again")
         } else {
             if googleUser {
-                authservice.createGoogleAccountUser(firstName: firstName, lastName: lastName, email: user?.email ?? "N/A", typeOfUser: TypeOfUser.passenger.rawValue, phone: phoneNumber, homeAddress: homeAddress, userId: user?.uid ?? "N/A", homeLat: homeLat!, homeLon: homeLon!)
+                authservice.createGoogleAccountUser(firstName: firstName, lastName: lastName, email: user?.email ?? "N/A", typeOfUser: TypeOfUser.driver.rawValue, phone: phoneNumber, homeAddress: homeAddress, userId: user?.uid ?? "N/A", homeLat: homeLat!, homeLon: homeLon!)
             } else {
-                authservice.createAccount(firstName: firstName, lastName: lastName, password: password, email: email, typeOfUser: TypeOfUser.passenger.rawValue, phone: phoneNumber, homeAddress: homeAddress, homeLat: self.homeLat!, homeLon: self.homeLon!)
+                authservice.createAccount(firstName: firstName, lastName: lastName, password: password, email: email, typeOfUser: TypeOfUser.driver.rawValue, phone: phoneNumber, homeAddress: homeAddress, homeLat: self.homeLat!, homeLon: self.homeLon!)
             }
 
         }
@@ -151,6 +119,7 @@ class CreateAccountViewController: UIViewController {
     }
     @IBAction func createAccount(_ sender: Any) {
         createNewUser()
+        activityIndicator.startAnimating()
     }
     
 }
@@ -160,13 +129,6 @@ extension CreateAccountViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.tag == 1 || textField.tag == 2 || textField.tag == 3 {
-            scrollUp = true
-        } else {
-            scrollUp = false
-        }
-    }
 }
 
 extension CreateAccountViewController : AuthServiceCreateNewAccountDelegate {
@@ -175,8 +137,10 @@ extension CreateAccountViewController : AuthServiceCreateNewAccountDelegate {
     }
     
     func didCreateNewAccount(_ authservice: AuthService, user: ManoUser) {
-        
-        unregisterKeyboardNotifications()
+        let vc = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil).instantiateViewController(identifier: "CarInfoViewController") as CarInfoViewController
+        vc.userId = user.userId
+        self.navigationController?.pushViewController(vc, animated: true)
+        activityIndicator.stopAnimating()
         
     }
     
@@ -214,3 +178,5 @@ extension CreateAccountViewController: GMSAutocompleteViewControllerDelegate {
     }
     
 }
+
+

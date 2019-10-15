@@ -20,34 +20,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: GIDSignInButton!
     
     private var authservice = AppDelegate.authservice
+    private var keyboardNotification = KeyboardNotification()
+    
     private var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupTap()
+        keyboardNotification.delegate = self
         GIDSignIn.sharedInstance().delegate = self
-        registerKeyboardNotifications()
         setupTextFieldsDelegates()
         googleSignInSetup()
-        // Do any additional setup after loading the view.
+        keyboardNotification.registerKeyboardNotifications()
     }
     
-    private func registerKeyboardNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(willShowKeyBaord), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willHideKeyBaord), name: UIResponder.keyboardWillHideNotification, object: nil)
+    override func viewDidDisappear(_ animated: Bool) {
+        keyboardNotification.unregisterKeyboardNotifications()
     }
     
-    @objc private func willShowKeyBaord(notification: Notification){
-        guard let info = notification.userInfo, let keyBoardFrame = info["UIKeyboardFrameEndUserInfoKey"] as? CGRect else {
-            print("UserInfo is nil")
-            return
-        }
-        //print(" UserInfo is:  \(info)")
-        view.transform = CGAffineTransform.init(translationX: 0, y: -keyBoardFrame.height + 200)
-    }
-    
-    @objc private func willHideKeyBaord(notification: Notification){
-        view.transform = CGAffineTransform.identity
-    }
     
     private func googleSignInSetup() {
         signInButton.layer.cornerRadius = 10
@@ -63,21 +52,14 @@ class LoginViewController: UIViewController {
         
     }
     
-    private func setup() {
-        
-        let screenTap = UITapGestureRecognizer.init(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(screenTap)
-        authservice.authserviceExistingAccountDelegate = self
-    }
+
     
     private func setupTextFieldsDelegates() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
     
-    @objc func dismissKeyboard() {
-        self.view.endEditing(true)
-    }
+
     
     private func signInCurrentUser(){
         guard let email = emailTextField.text,
@@ -181,6 +163,18 @@ extension LoginViewController: GIDSignInDelegate {
         // ...
     }
     
+    
+    
+}
+
+extension LoginViewController: KeyboardNotificationDelegate {
+    func transformView(keyboardFrame: CGRect) {
+        view.transform = CGAffineTransform.init(translationX: 0, y: -keyboardFrame.height + 200)
+    }
+    
+    func hideView() {
+        view.transform = CGAffineTransform.identity
+    }
     
     
 }

@@ -46,6 +46,17 @@ extension DBService {
         }
     }
     
+    static public func updateCarInfo(userId: String,make: String, model: String,state: String, plate: String,frontImage: String, backImage: String, completion: @escaping(Error?) -> Void) {
+        DBService.firestoreDB.collection(ManoUserCollectionKeys.collectionKey).document(userId).updateData([ManoUserCollectionKeys.carMakerModelKey : make, ManoUserCollectionKeys.carMakerModelKey : model,
+                                                                                                            ManoUserCollectionKeys.state : state, ManoUserCollectionKeys.licencePlateKey : plate, ManoUserCollectionKeys.carFrontImageKey : frontImage, ManoUserCollectionKeys.carBackImageKey : backImage]) { (error) in
+                                                  
+                                                                                        if let error = error {
+                                                                                                    completion(error)
+                                                                                        } else {
+                                                                                            print("user updated")
+                                                                                                                }
+        }
+    }
     static public func fetchManoUser(userId: String, completion: @escaping (Error?, ManoUser?) -> Void) {
         DBService.firestoreDB
             .collection(ManoUserCollectionKeys.collectionKey)

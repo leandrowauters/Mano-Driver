@@ -20,11 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         var rootViewController = UIViewController()
-         AppDelegate.authservice.signOutAccount()
+//         AppDelegate.authservice.signOutAccount()
         if let manoUser = AppDelegate.authservice.getCurrentUser() {
            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let availableRides = storyboard.instantiateViewController(withIdentifier: "AvailableRides") as! AvailableRides
+            availableRides.userId = manoUser.uid
             rootViewController = availableRides
         } else {
             let storyboard = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil)

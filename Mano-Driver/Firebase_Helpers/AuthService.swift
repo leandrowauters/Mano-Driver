@@ -31,7 +31,7 @@ protocol AuthServiceUpdateAccountDelegate: AnyObject {
 }
 
 protocol AuthServiceSignInDelegate: AnyObject {
-    func didSignIn()
+    func didSignIn(manoUser: ManoUserDriver)
     func didSignInError(error: Error)
 }
 
@@ -40,12 +40,20 @@ final class AuthService {
     weak var authserviceExistingAccountDelegate: AuthServiceExistingAccountDelegate?
     weak var authserviceSignOutDelegate: AuthServiceSignOutDelegate?
     weak var authserviceUpdateAccountDelegate: AuthServiceUpdateAccountDelegate?
-    weak var autherserviceSignInDelegage: AuthServiceSignInDelegate?
+    weak var autherserviceSignInDelegate: AuthServiceSignInDelegate?
     
     static public var currentManoUser: ManoUserDriver!
     //Fetch user and assign to currentManoUser
-    public func signIn() {
-        
+    let dbService = DBService()
+    public func signIn(userId: String) {
+        dbService.fetchManoUser(userId: userId) { [weak self] error, manoUser in
+            if let error = error {
+                self?.autherserviceSignInDelegate?.didSignInError(error: error)
+            }
+            if let manoUser = manoUser {
+                self?.autherserviceSignInDelegate?.didSignIn(manoUser: manoUser)
+            }
+        }
     }
     public func createAccount(firstName: String, lastName: String, password: String, email: String, typeOfUser: String, phone: String, homeAddress: String, homeLat: Double, homeLon: Double) {
         Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
@@ -56,7 +64,7 @@ final class AuthService {
             else if let authDataResult = authDataResult {
                 let joinedDate = Date().dateDescription
                 let manoUser = ManoUserDriver(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: authDataResult.user.uid, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carImage: nil,userImage: nil, cellPhone: phone, rides: nil)
-                DBService.createUser(manoUser: manoUser, completion: { (error) in
+                self.dbService.createUser(manoUser: manoUser, completion: { (error) in
                     if let error = error {
                         self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)
                     }
@@ -81,7 +89,7 @@ final class AuthService {
     public func createGoogleAccountUser(firstName: String, lastName: String, email: String, typeOfUser: String, phone: String, homeAddress: String, userId: String, homeLat: Double, homeLon: Double) {
         let joinedDate = Date().dateDescription
         let manoUser = ManoUserDriver(firstName: firstName, lastName: lastName, fullName: ((firstName ) + " " + (lastName )).trimmingCharacters(in: .whitespacesAndNewlines), homeAdress: homeAddress, homeLat: homeLat, homeLon: homeLon, profileImage: nil, carMakerModel: nil, bio: nil, typeOfUser: typeOfUser, regulars: nil, joinedDate: joinedDate, userId: userId, numberOfRides: nil, numberOfMiles:  nil, licencePlate: nil, carImage: nil, userImage: nil ,cellPhone: phone, rides: nil)
-        DBService.createUser(manoUser: manoUser, completion: { (error) in
+        dbService.createUser(manoUser: manoUser, completion: { (error) in
             if let error = error {
                 self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)
             }
@@ -90,7 +98,7 @@ final class AuthService {
     }
     
     public func googleUserCreateAccount(manoUser: ManoUserDriver) {
-        DBService.createUser(manoUser: manoUser, completion: { (error) in
+        dbService.createUser(manoUser: manoUser, completion: { (error) in
             if let error = error {
                 self.authserviceCreateNewAccountDelegate?.didRecieveErrorCreatingAccount(self, error: error)
             }
@@ -128,7 +136,7 @@ final class AuthService {
             if let error = error {
                 completion(error)
             }
-            DBService.deleteAccount(user: AuthService.currentManoUser, completion: { (error) in
+            self.dbService.deleteAccount(user: AuthService.currentManoUser, completion: { (error) in
                 if let error = error {
                     completion(error)
                 }

@@ -18,11 +18,23 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
     let locationManager = LocationManager()
     weak var locationManagerDelegate: LocationManagerDelegate?
     
-    private var rides = [Ride]()
+    let auth = AuthService()
+    let dbService = DBService()
+    var userId: String?
+    
+    private var rides = [Ride]() {
+        didSet {
+            print("DidSet WORK!!")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.getUserLocation()
         locationManager.delegate = self
+        auth.autherserviceSignInDelegate = self
+        auth.signIn(userId: userId!)
+        dbService.rideFetchingDelegate = self
     }
     
     
@@ -34,16 +46,32 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
        setupUI()
     }
     
-    func fecthRides() {
-        DBService.fetchUserRides { [weak self] error, rides in
-            if let error = error {
-                self?.showAlert(title: "Error fetching rides", message: error.localizedDescription)
-            }
-            
-            if let rides = rides {
-                self?.rides = rides
-            }
-        }
-    }
 
+
+}
+
+extension AvailableRides: AuthServiceSignInDelegate {
+    func didSignIn(manoUser: ManoUserDriver) {
+        dbService.fetchAvailableRides()
+    }
+    
+    func didSignInError(error: Error) {
+        activityIndicator.stopAnimating()
+        showAlert(title: "Error signing in", message: error.localizedDescription)
+    }
+    
+    
+}
+
+extension AvailableRides: RideFetchingDelegate {
+    func didFetchRides(rides: [Ride]) {
+        self.rides = rides
+        activityIndicator.stopAnimating()
+    }
+    
+    func errorFetchingRides(error: Error) {
+        
+    }
+    
+    
 }

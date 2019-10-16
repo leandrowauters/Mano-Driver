@@ -43,7 +43,7 @@ extension CarInfoViewController: AuthServiceUpdateAccountDelegate {
     
     func didUpdateAccount() {
         activityIndicator.stopAnimating()
-        segueToAvailableRides()
+        segueToAvailableRides(userId: userId)
     }
     
     func didRecieveErrorUpdatingAccount(error: Error) {

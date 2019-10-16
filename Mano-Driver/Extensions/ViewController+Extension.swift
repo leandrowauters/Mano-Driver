@@ -21,9 +21,10 @@ extension UIViewController {
         view.addGestureRecognizer(screenTap)
     }
     
-    func segueToAvailableRides() {
+    func segueToAvailableRides(userId: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let availableRides = storyboard.instantiateViewController(withIdentifier: "AvailableRides") as! AvailableRides
+        availableRides.userId = userId
         self.navigationController?.pushViewController(availableRides, animated: true)
     }
 }

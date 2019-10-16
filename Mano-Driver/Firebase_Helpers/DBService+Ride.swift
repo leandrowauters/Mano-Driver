@@ -11,7 +11,7 @@ import FirebaseFirestore
 extension DBService {
     
     
-    static public func fetchUserRides(completion: @escaping(Error?, [Ride]?) -> Void) -> ListenerRegistration {
+    public func fetchUserRides(completion: @escaping(Error?, [Ride]?) -> Void) -> ListenerRegistration {
         return DBService.firestoreDB.collection(RideCollectionKeys.collectionKey).whereField(RideCollectionKeys.driverIdKey, isEqualTo: AuthService.currentManoUser.userId).addSnapshotListener { (snapshot, error) in
             if let error = error {
                 completion(error,nil)
@@ -23,10 +23,10 @@ extension DBService {
         }
     }
     
-    static public func fetchAvailableRides(completion: @escaping(Error?, [Ride]?) -> Void) -> ListenerRegistration {
-        return firestoreDB.collection(RideCollectionKeys.collectionKey).whereField(RideCollectionKeys.rideStatusKey, isEqualTo: RideStatus.rideRequested).addSnapshotListener { (snapshot, error) in
+    public func fetchAvailableRides(){
+        DBService.firestoreDB.collection(RideCollectionKeys.collectionKey).whereField(RideCollectionKeys.rideStatusKey, isEqualTo: RideStatus.rideRequested.rawValue).addSnapshotListener { (snapshot, error) in
             if let error = error {
-                completion(error, nil)
+                self.rideFetchingDelegate?.errorFetchingRides(error: error)
             }
             
             if let snapshot = snapshot {
@@ -34,6 +34,7 @@ extension DBService {
                 let filteredRides = rides.filter { (ride) -> Bool in
                     !ride.appointmentDate.stringToDate().dateExpired()
                 }
+                self.rideFetchingDelegate?.didFetchRides(rides: filteredRides)
             }
         }
     }

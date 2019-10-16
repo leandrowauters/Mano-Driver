@@ -208,7 +208,7 @@
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-bi-dqG">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.70098458900000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -514,7 +514,7 @@
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hA4-f2-cpx">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.70098458900000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -657,8 +657,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-pb-YnA">
-                                <rect key="frame" x="50.000000000000007" y="174" width="90.666666666666686" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-pb-YnA">
+                                <rect key="frame" x="50" y="174" width="51.333333333333343" height="20"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -691,6 +691,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="ig1-sW-afU" eventType="touchUpInside" id="NqK-sL-iHE"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tY-lO-X5B">
                                 <rect key="frame" x="40" y="476" width="334" height="20"/>
@@ -718,6 +721,10 @@
                                     <constraint firstAttribute="height" constant="35" id="Ern-tD-toe"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-8Q-F0O">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.70098458900000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -728,15 +735,18 @@
                             <constraint firstItem="TFC-4w-jzy" firstAttribute="trailing" secondItem="ZZc-7H-3iR" secondAttribute="trailing" constant="50" id="7up-b6-95g"/>
                             <constraint firstItem="SgX-fa-UBa" firstAttribute="centerX" secondItem="TFC-4w-jzy" secondAttribute="centerX" id="DuF-G8-u62"/>
                             <constraint firstItem="TFC-4w-jzy" firstAttribute="trailing" secondItem="1ys-Ua-TpV" secondAttribute="trailing" constant="70" id="E1d-Zm-N3g"/>
+                            <constraint firstItem="Gta-8Q-F0O" firstAttribute="centerY" secondItem="TFC-4w-jzy" secondAttribute="centerY" id="FBV-QV-bOU"/>
                             <constraint firstItem="TFC-4w-jzy" firstAttribute="trailing" secondItem="AcR-cr-UEQ" secondAttribute="trailing" constant="70" id="GqS-hC-4rH"/>
                             <constraint firstItem="eeX-Mh-FsD" firstAttribute="top" secondItem="8ca-b2-wNR" secondAttribute="bottom" id="I86-mB-d6u"/>
                             <constraint firstItem="hBR-qD-t71" firstAttribute="top" secondItem="1ys-Ua-TpV" secondAttribute="bottom" constant="15" id="IWA-3w-9m6"/>
                             <constraint firstItem="0tY-lO-X5B" firstAttribute="leading" secondItem="TFC-4w-jzy" secondAttribute="leading" constant="40" id="JaI-s0-pmi"/>
                             <constraint firstItem="oL1-cP-cMl" firstAttribute="leading" secondItem="TFC-4w-jzy" secondAttribute="leading" constant="50" id="NJd-QL-iwP"/>
+                            <constraint firstItem="Gta-8Q-F0O" firstAttribute="width" secondItem="TFC-4w-jzy" secondAttribute="width" id="NMp-RH-9P0"/>
                             <constraint firstItem="ZZc-7H-3iR" firstAttribute="top" secondItem="oL1-cP-cMl" secondAttribute="bottom" constant="5" id="NXn-If-Rog"/>
                             <constraint firstItem="0tY-lO-X5B" firstAttribute="top" secondItem="hBR-qD-t71" secondAttribute="bottom" constant="15" id="PEE-Py-9tA"/>
                             <constraint firstItem="8ca-b2-wNR" firstAttribute="top" secondItem="Ejb-pb-YnA" secondAttribute="bottom" constant="5" id="Psz-fm-lq1"/>
                             <constraint firstItem="XcS-yj-Aci" firstAttribute="leading" secondItem="Z4O-gv-Cz0" secondAttribute="leadingMargin" constant="30" id="RI0-JG-mWu"/>
+                            <constraint firstItem="Gta-8Q-F0O" firstAttribute="centerX" secondItem="TFC-4w-jzy" secondAttribute="centerX" id="Tgm-ly-aKP"/>
                             <constraint firstItem="SgX-fa-UBa" firstAttribute="leading" secondItem="TFC-4w-jzy" secondAttribute="leading" id="VDb-YI-EMQ"/>
                             <constraint firstItem="TFC-4w-jzy" firstAttribute="trailing" secondItem="SgX-fa-UBa" secondAttribute="trailing" id="Vmj-7Z-s3o"/>
                             <constraint firstItem="8ca-b2-wNR" firstAttribute="leading" secondItem="TFC-4w-jzy" secondAttribute="leading" constant="50" id="Ysi-aq-cFP"/>
@@ -745,6 +755,7 @@
                             <constraint firstItem="hBR-qD-t71" firstAttribute="leading" secondItem="TFC-4w-jzy" secondAttribute="leading" constant="70" id="fn7-gX-qWa"/>
                             <constraint firstItem="Ejb-pb-YnA" firstAttribute="centerY" secondItem="TFC-4w-jzy" secondAttribute="centerY" multiplier="0.5" id="h6X-0u-oFI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XcS-yj-Aci" secondAttribute="trailing" constant="30" id="h9F-Op-OzL"/>
+                            <constraint firstItem="Gta-8Q-F0O" firstAttribute="height" secondItem="TFC-4w-jzy" secondAttribute="height" id="kCo-fN-4vb"/>
                             <constraint firstItem="eeX-Mh-FsD" firstAttribute="leading" secondItem="Z4O-gv-Cz0" secondAttribute="leadingMargin" constant="30" id="liJ-Xi-IHJ"/>
                             <constraint firstItem="TFC-4w-jzy" firstAttribute="trailing" secondItem="hBR-qD-t71" secondAttribute="trailing" constant="70" id="nU5-f5-MSc"/>
                             <constraint firstItem="SgX-fa-UBa" firstAttribute="centerY" secondItem="TFC-4w-jzy" secondAttribute="centerY" multiplier="0.3" id="psx-ZM-4gx"/>
@@ -760,6 +771,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="LoginButton" destination="1ys-Ua-TpV" id="0yI-RX-3pi"/>
+                        <outlet property="activityIndicator" destination="Gta-8Q-F0O" id="ZXc-Ay-yjm"/>
                         <outlet property="emailTextField" destination="8ca-b2-wNR" id="cMb-6n-Y2f"/>
                         <outlet property="passwordTextField" destination="ZZc-7H-3iR" id="mOU-KR-HRa"/>
                         <outlet property="signInButton" destination="AcR-cr-UEQ" id="Njt-Sn-xCm"/>

@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpButton: RoundedButton!
     
     @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var authservice = AppDelegate.authservice
     private var keyboardNotification = KeyboardNotification()
@@ -28,7 +29,7 @@ class LoginViewController: UIViewController {
         authservice.authserviceExistingAccountDelegate = self
         setupTap()
         keyboardNotification.delegate = self
-        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().delegate = self
         setupTextFieldsDelegates()
         googleSignInSetup()
         keyboardNotification.registerKeyboardNotifications()
@@ -91,6 +92,9 @@ class LoginViewController: UIViewController {
         }
     }
 
+    @IBAction func loginPressed(_ sender: Any) {
+        signInCurrentUser()
+    }
     @IBAction func signupPressed(_ sender: Any) {
         
         let vc = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil).instantiateViewController(identifier: "CreateAccountViewController") as CreateAccountViewController
@@ -107,7 +111,7 @@ extension LoginViewController: UITextFieldDelegate{
 
 extension LoginViewController : AuthServiceExistingAccountDelegate {
     func didSignInToExistingAccount(_ authservice: AuthService, user: User) {
-        segueToAvailableRides()
+        segueToAvailableRides(userId: user.uid)
         
     }
     
@@ -117,49 +121,49 @@ extension LoginViewController : AuthServiceExistingAccountDelegate {
     
 }
 
-extension LoginViewController: GIDSignInDelegate {
-    
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
-        if let error = error {
-            self.showAlert(title: "Error signing in with google", message: error.localizedDescription)
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            if let error = error {
-                self.showAlert(title: "Error setting credantials", message: error.localizedDescription)
-                return
-            }
-            if let user = Auth.auth().currentUser {
-                DBService.fetchManoUser(userId: user.uid, completion: { (error, manoUser) in
-                    if let error = error {
-                        self.showAlert(title: "Error fetching user", message: error.localizedDescription)
-                    }
-                    if let manoUser = manoUser {
-                        AuthService.currentManoUser = manoUser
-                    } else {
-                        self.user = user
-                        self.performSegue(withIdentifier: "Google sign in", sender: self)
-                        
-                    }
-                })
-            }
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-    
-    
-    
-}
+//extension LoginViewController: GIDSignInDelegate {
+//
+//
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+//        // ...
+//        if let error = error {
+//            self.showAlert(title: "Error signing in with google", message: error.localizedDescription)
+//            return
+//        }
+//
+//        guard let authentication = user.authentication else { return }
+//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                       accessToken: authentication.accessToken)
+//        Auth.auth().signIn(with: credential) { (authResult, error) in
+//            if let error = error {
+//                self.showAlert(title: "Error setting credantials", message: error.localizedDescription)
+//                return
+//            }
+//            if let user = Auth.auth().currentUser {
+//                DBService.fetchManoUser(userId: user.uid, completion: { (error, manoUser) in
+//                    if let error = error {
+//                        self.showAlert(title: "Error fetching user", message: error.localizedDescription)
+//                    }
+//                    if let manoUser = manoUser {
+//                        AuthService.currentManoUser = manoUser
+//                    } else {
+//                        self.user = user
+//                        self.performSegue(withIdentifier: "Google sign in", sender: self)
+//
+//                    }
+//                })
+//            }
+//        }
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // ...
+//    }
+//
+//
+//
+//}
 
 extension LoginViewController: KeyboardNotificationDelegate {
     func transformView(keyboardFrame: CGRect) {

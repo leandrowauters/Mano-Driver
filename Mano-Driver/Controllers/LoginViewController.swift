@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     private var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
+        authservice.authserviceExistingAccountDelegate = self
         setupTap()
         keyboardNotification.delegate = self
         GIDSignIn.sharedInstance().delegate = self
@@ -106,14 +107,7 @@ extension LoginViewController: UITextFieldDelegate{
 
 extension LoginViewController : AuthServiceExistingAccountDelegate {
     func didSignInToExistingAccount(_ authservice: AuthService, user: User) {
-        DBService.fetchManoUser(userId: user.uid) { (error, manoUser) in
-            if let error = error {
-                self.showAlert(title: "Error signign in", message: error.localizedDescription)
-            }
-            if let manoUser = manoUser {
-                DBService.currentManoUser = manoUser
-            }
-        }
+        segueToAvailableRides()
         
     }
     
@@ -147,7 +141,7 @@ extension LoginViewController: GIDSignInDelegate {
                         self.showAlert(title: "Error fetching user", message: error.localizedDescription)
                     }
                     if let manoUser = manoUser {
-                        DBService.currentManoUser = manoUser
+                        AuthService.currentManoUser = manoUser
                     } else {
                         self.user = user
                         self.performSegue(withIdentifier: "Google sign in", sender: self)

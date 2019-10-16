@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickerView_ViewController" customModule="Mano_Driver" customModuleProvider="target">
             <connections>
-                <outlet property="pickerView" destination="uqb-Y9-Hg3" id="1jy-Vb-9Nd"/>
+                <outlet property="pickerView" destination="uqb-Y9-Hg3" id="Gg4-wY-KUA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,11 +18,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9v-8r-iqs">
-                    <rect key="frame" x="0.0" y="676" width="414" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9v-8r-iqs" customClass="BorderButton" customModule="Mano_Driver" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="KwD-1H-vm8"/>
+                        <constraint firstAttribute="height" constant="50" id="KwD-1H-vm8"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                     <state key="normal" title="Cancel">
@@ -32,11 +32,11 @@
                         <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="CqV-pr-5SG"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-vc-Wb8">
-                    <rect key="frame" x="0.0" y="636" width="414" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-vc-Wb8" customClass="BorderButton" customModule="Mano_Driver" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="637" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="zgj-y1-6g6"/>
+                        <constraint firstAttribute="height" constant="50" id="zgj-y1-6g6"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                     <state key="normal" title="Accept"/>
@@ -44,30 +44,20 @@
                         <action selector="acceptPressed:" destination="-1" eventType="touchUpInside" id="Fe0-kt-2Lr"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kik-Mu-c3T">
-                    <rect key="frame" x="0.0" y="616" width="414" height="20"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="ont-T4-5pe"/>
-                    </constraints>
-                </view>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqb-Y9-Hg3">
-                    <rect key="frame" x="0.0" y="400" width="414" height="216"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="421" width="414" height="216"/>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pickerView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c9v-8r-iqs" secondAttribute="trailing" id="43L-10-KTi"/>
                 <constraint firstItem="jrK-vc-Wb8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bb9-7L-4eY"/>
-                <constraint firstItem="c9v-8r-iqs" firstAttribute="top" secondItem="jrK-vc-Wb8" secondAttribute="bottom" id="FJQ-7K-rDz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kik-Mu-c3T" secondAttribute="trailing" id="Kb6-zZ-f4D"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c9v-8r-iqs" secondAttribute="bottom" constant="20" id="ORF-GI-cR3"/>
+                <constraint firstItem="c9v-8r-iqs" firstAttribute="top" secondItem="jrK-vc-Wb8" secondAttribute="bottom" constant="-1" id="FJQ-7K-rDz"/>
+                <constraint firstItem="jrK-vc-Wb8" firstAttribute="top" secondItem="uqb-Y9-Hg3" secondAttribute="bottom" id="NxU-Sv-tac"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="c9v-8r-iqs" secondAttribute="bottom" id="ORF-GI-cR3"/>
                 <constraint firstItem="uqb-Y9-Hg3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QUf-3L-xIQ"/>
                 <constraint firstItem="uqb-Y9-Hg3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="csp-ux-xD3"/>
-                <constraint firstItem="jrK-vc-Wb8" firstAttribute="top" secondItem="kik-Mu-c3T" secondAttribute="bottom" id="qt1-8l-gnp"/>
-                <constraint firstItem="kik-Mu-c3T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="t9z-bW-vrt"/>
-                <constraint firstItem="kik-Mu-c3T" firstAttribute="top" secondItem="uqb-Y9-Hg3" secondAttribute="bottom" id="tIL-DZ-bDp"/>
                 <constraint firstItem="c9v-8r-iqs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v5b-6y-YBt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jrK-vc-Wb8" secondAttribute="trailing" id="yww-3d-jw2"/>
             </constraints>

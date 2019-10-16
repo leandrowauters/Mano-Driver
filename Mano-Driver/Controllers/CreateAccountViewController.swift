@@ -96,11 +96,15 @@ class CreateAccountViewController: UIViewController {
             !homeAddress.isEmpty,
             !phoneNumber.isEmpty
             else {
+                activityIndicator.stopAnimating()
                 showAlert(title: "Missing Required Fields", message: nil)
+                
                 return
         }
         if password != confirmPassword {
+            activityIndicator.stopAnimating()
             showAlert(title: "Passwords do not match", message: "Try again")
+            
         } else {
             if googleUser {
                 authservice.createGoogleAccountUser(firstName: firstName, lastName: lastName, email: user?.email ?? "N/A", typeOfUser: TypeOfUser.driver.rawValue, phone: phoneNumber, homeAddress: homeAddress, userId: user?.uid ?? "N/A", homeLat: homeLat!, homeLon: homeLon!)
@@ -109,8 +113,9 @@ class CreateAccountViewController: UIViewController {
             }
 
         }
-        
     }
+    
+    
     @IBAction func homeAddressPressed(_ sender: UIButton) {
         MapsHelper.shared.setupAutoCompeteVC(Vc: self)
     }
@@ -118,8 +123,9 @@ class CreateAccountViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func createAccount(_ sender: Any) {
-        createNewUser()
         activityIndicator.startAnimating()
+        createNewUser()
+        
     }
     
 }
@@ -136,7 +142,7 @@ extension CreateAccountViewController : AuthServiceCreateNewAccountDelegate {
         showAlert(title: "Account Creation Error", message: error.localizedDescription)
     }
     
-    func didCreateNewAccount(_ authservice: AuthService, user: ManoUser) {
+    func didCreateNewAccount(_ authservice: AuthService, user: ManoUserDriver) {
         let vc = UIStoryboard(name: "Login+Create+Storyboard", bundle: nil).instantiateViewController(identifier: "CarInfoViewController") as CarInfoViewController
         vc.userId = user.userId
         self.navigationController?.pushViewController(vc, animated: true)

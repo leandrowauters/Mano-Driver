@@ -39,23 +39,32 @@
                                 <rect key="frame" x="0.0" y="95" width="414" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VDi-PB-xDz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="VDi-PB-xDz" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="1IO-wc-YzA"/>
                             <constraint firstItem="UMC-Xa-UlY" firstAttribute="top" secondItem="mFH-gh-LbU" secondAttribute="bottom" id="FVf-ax-rCV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UMC-Xa-UlY" secondAttribute="bottom" id="H2i-iV-xa3"/>
+                            <constraint firstItem="VDi-PB-xDz" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="PEZ-jW-RIz"/>
                             <constraint firstItem="mFH-gh-LbU" firstAttribute="top" secondItem="PhA-j2-OAL" secondAttribute="bottom" id="UC4-PQ-xlZ"/>
                             <constraint firstItem="PhA-j2-OAL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UI6-xh-2X5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PhA-j2-OAL" secondAttribute="trailing" id="YEP-fv-P8J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UMC-Xa-UlY" secondAttribute="trailing" id="c78-dy-2nO"/>
                             <constraint firstItem="mFH-gh-LbU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dkt-aq-hth"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mFH-gh-LbU" secondAttribute="trailing" id="fjS-mR-uzo"/>
+                            <constraint firstItem="VDi-PB-xDz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gSK-Pl-juG"/>
+                            <constraint firstItem="VDi-PB-xDz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jPa-bq-HwC"/>
                             <constraint firstItem="PhA-j2-OAL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s63-Dl-gc6"/>
                             <constraint firstItem="UMC-Xa-UlY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tj9-SZ-guz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="VDi-PB-xDz" id="o9a-EX-IrL"/>
                         <outlet property="mapView" destination="UMC-Xa-UlY" id="XLA-91-nJF"/>
                     </connections>
                 </viewController>

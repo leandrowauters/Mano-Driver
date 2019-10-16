@@ -41,7 +41,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="given-name"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGd-hL-eH7">
                                                 <rect key="frame" x="50" y="115" width="92" height="20"/>
@@ -208,7 +208,7 @@
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-bi-dqG">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
-                                                <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -372,7 +372,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHB-4O-mj1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHB-4O-mj1">
                                                 <rect key="frame" x="0.0" y="426.33333333333331" width="414" height="24"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -464,9 +464,9 @@
                                                     <constraint firstAttribute="width" secondItem="RpE-ki-y72" secondAttribute="height" multiplier="23:15" id="Lp0-Py-qOm"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="camera" catalog="system"/>
+                                                <state key="normal" image="car" catalog="system"/>
                                                 <connections>
-                                                    <action selector="frontButtonPressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="geR-iT-DHK"/>
+                                                    <action selector="carButtonPressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="geR-iT-DHK"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-ov-SlE" customClass="Rounder10Button" customModule="Mano_Driver" customModuleProvider="target">
@@ -475,9 +475,9 @@
                                                     <constraint firstAttribute="width" secondItem="Opw-ov-SlE" secondAttribute="height" multiplier="23:15" id="oNz-Nb-v2V"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="camera" catalog="system"/>
+                                                <state key="normal" image="person" catalog="system"/>
                                                 <connections>
-                                                    <action selector="backButtonPressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="4aB-il-anv"/>
+                                                    <action selector="userButtonPressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="4aB-il-anv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEX-y7-oqr" customClass="RoundedButton" customModule="Mano_Driver" customModuleProvider="target">
@@ -490,13 +490,13 @@
                                                     <action selector="donePressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="TaM-Ai-HEN"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYG-7L-BMX">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYG-7L-BMX">
                                                 <rect key="frame" x="50" y="570" width="145" height="20"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-gB-lEv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-gB-lEv">
                                                 <rect key="frame" x="219" y="570" width="145" height="20"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,7 +504,18 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4U-PQ-e3g">
                                                 <rect key="frame" x="50" y="336.33333333333331" width="145" height="40"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stateButtonPressed:" destination="JwO-pn-Ntd" eventType="touchUpInside" id="v0L-5q-pA9"/>
+                                                </connections>
                                             </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hA4-f2-cpx">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.01176470588" green="0.60784313729999995" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -516,6 +527,7 @@
                                             <constraint firstItem="wpx-cO-13Q" firstAttribute="leading" secondItem="Xez-I4-O9Z" secondAttribute="leading" constant="50" id="38a-xz-0NG"/>
                                             <constraint firstItem="nMt-8P-JWy" firstAttribute="top" secondItem="RxB-We-cr0" secondAttribute="bottom" constant="20" id="3Pp-ZR-2ll"/>
                                             <constraint firstItem="zHB-4O-mj1" firstAttribute="top" secondItem="f1B-Am-MaP" secondAttribute="bottom" constant="45" id="3yX-lh-Mtp"/>
+                                            <constraint firstItem="hA4-f2-cpx" firstAttribute="width" secondItem="Xez-I4-O9Z" secondAttribute="width" id="49x-AZ-gne"/>
                                             <constraint firstItem="8qs-Lp-4Nq" firstAttribute="top" secondItem="wpx-cO-13Q" secondAttribute="bottom" id="4BX-im-asH"/>
                                             <constraint firstItem="f1B-Am-MaP" firstAttribute="top" secondItem="G4U-PQ-e3g" secondAttribute="bottom" constant="2" id="4OX-Qa-tPf"/>
                                             <constraint firstAttribute="trailing" secondItem="enD-yE-s5w" secondAttribute="trailing" constant="50" id="6dK-FP-h1j"/>
@@ -526,9 +538,11 @@
                                             <constraint firstItem="gqA-gB-lEv" firstAttribute="width" secondItem="Opw-ov-SlE" secondAttribute="width" id="BYs-04-TeK"/>
                                             <constraint firstItem="wpx-cO-13Q" firstAttribute="top" secondItem="71B-es-TYD" secondAttribute="bottom" constant="20" id="E5h-u6-eZp"/>
                                             <constraint firstItem="8Xp-qV-inu" firstAttribute="centerX" secondItem="ycx-gd-yLX" secondAttribute="centerX" id="ELA-uB-ilx"/>
+                                            <constraint firstItem="hA4-f2-cpx" firstAttribute="centerY" secondItem="Xez-I4-O9Z" secondAttribute="centerY" id="FGe-gU-etn"/>
                                             <constraint firstItem="f1B-Am-MaP" firstAttribute="leading" secondItem="Xez-I4-O9Z" secondAttribute="leading" constant="50" id="FqL-hY-5ja"/>
                                             <constraint firstItem="ycx-gd-yLX" firstAttribute="centerY" secondItem="f1B-Am-MaP" secondAttribute="centerY" id="GBM-Gn-99N"/>
                                             <constraint firstItem="bZm-Xx-42X" firstAttribute="centerX" secondItem="ycx-gd-yLX" secondAttribute="centerX" id="HNj-WO-MtE"/>
+                                            <constraint firstItem="hA4-f2-cpx" firstAttribute="centerX" secondItem="Xez-I4-O9Z" secondAttribute="centerX" id="Ixo-Nb-j9X"/>
                                             <constraint firstItem="nMt-8P-JWy" firstAttribute="leading" secondItem="Xez-I4-O9Z" secondAttribute="leading" constant="50" id="JAW-py-wRq"/>
                                             <constraint firstAttribute="trailing" secondItem="ycx-gd-yLX" secondAttribute="trailing" constant="50" id="K67-do-0Of"/>
                                             <constraint firstItem="ycx-gd-yLX" firstAttribute="top" secondItem="8Xp-qV-inu" secondAttribute="bottom" constant="2" id="LTP-Is-Ha8"/>
@@ -551,6 +565,7 @@
                                             <constraint firstItem="Opw-ov-SlE" firstAttribute="width" secondItem="Opw-ov-SlE" secondAttribute="height" multiplier="23:15" id="bPU-DD-hZv"/>
                                             <constraint firstAttribute="trailing" secondItem="nMt-8P-JWy" secondAttribute="trailing" constant="50" id="c33-Fm-uJc"/>
                                             <constraint firstItem="gqA-gB-lEv" firstAttribute="centerX" secondItem="Opw-ov-SlE" secondAttribute="centerX" id="cvk-gW-Y0Z"/>
+                                            <constraint firstItem="hA4-f2-cpx" firstAttribute="height" secondItem="Xez-I4-O9Z" secondAttribute="height" id="d0u-9r-gvQ"/>
                                             <constraint firstAttribute="trailing" secondItem="zHB-4O-mj1" secondAttribute="trailing" id="d22-mC-afo"/>
                                             <constraint firstAttribute="trailing" secondItem="fAt-Fc-5z4" secondAttribute="trailing" id="deQ-Z0-9pb"/>
                                             <constraint firstItem="8qs-Lp-4Nq" firstAttribute="leading" secondItem="Xez-I4-O9Z" secondAttribute="leading" constant="50" id="dvc-zP-Tio"/>
@@ -577,7 +592,6 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1000" id="7qc-EK-beG"/>
                                     <constraint firstAttribute="bottom" secondItem="Xez-I4-O9Z" secondAttribute="bottom" id="EtI-bb-9gr"/>
                                     <constraint firstAttribute="trailing" secondItem="Xez-I4-O9Z" secondAttribute="trailing" id="M3L-10-WpW"/>
                                     <constraint firstItem="Xez-I4-O9Z" firstAttribute="leading" secondItem="Jxy-yH-PrO" secondAttribute="leading" id="p2O-z6-uGS"/>
@@ -600,12 +614,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="backButton" destination="Opw-ov-SlE" id="O30-sO-Afl"/>
-                        <outlet property="frontButton" destination="RpE-ki-y72" id="Tt2-aR-iBA"/>
+                        <outlet property="activityIndicator" destination="hA4-f2-cpx" id="RBa-zF-hpc"/>
+                        <outlet property="carButton" destination="RpE-ki-y72" id="Tt2-aR-iBA"/>
                         <outlet property="makeTextField" destination="enD-yE-s5w" id="fs0-Xc-ZKm"/>
                         <outlet property="modelTextField" destination="8qs-Lp-4Nq" id="ulR-hG-z9T"/>
                         <outlet property="plateTextField" destination="8Xp-qV-inu" id="fUj-hO-eOy"/>
                         <outlet property="stateButton" destination="G4U-PQ-e3g" id="bVT-g5-CQF"/>
+                        <outlet property="userButton" destination="Opw-ov-SlE" id="O30-sO-Afl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grV-xv-Dr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -775,6 +790,7 @@
     </scenes>
     <resources>
         <image name="back" width="48" height="48"/>
-        <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="car" catalog="system" width="64" height="46"/>
+        <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>

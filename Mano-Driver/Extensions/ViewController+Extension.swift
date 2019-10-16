@@ -20,4 +20,10 @@ extension UIViewController {
         let screenTap = UITapGestureRecognizer.init(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(screenTap)
     }
+    
+    func segueToAvailableRides() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let availableRides = storyboard.instantiateViewController(withIdentifier: "AvailableRides") as! AvailableRides
+        self.navigationController?.pushViewController(availableRides, animated: true)
+    }
 }

@@ -17,7 +17,7 @@ class PickerView_ViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var pickerView: UIPickerView!
     
     var delegate: PickerViewControllerDelegate?
-    var selectedState: String!
+    var selectedState: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -26,7 +26,7 @@ class PickerView_ViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     @IBAction func acceptPressed(_ sender: Any) {
-        delegate?.accepted(usState: selectedState)
+        delegate?.accepted(usState: selectedState ?? "AK")
     }
     @IBAction func cancelPressed(_ sender: Any) {
         delegate?.cancel()
@@ -41,8 +41,11 @@ class PickerView_ViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        selectedState = USStates.usStates[row]
         return USStates.usStates[row]
     }
-
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedState = USStates.usStates[row]
+    }
+    
 }

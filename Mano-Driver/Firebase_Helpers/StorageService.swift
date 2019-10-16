@@ -20,20 +20,25 @@ final class StorageService {
     }()
     
     static public func postImages(imagesData: [Data], imageNames: [String], completion: @escaping (Error?, [URL]?) -> Void) {
-        let nameIndex = 0
-        var urls = [URL]()
-        imagesData.forEach { (imageData) in
-            
-            StorageService.postImage(imageData: imageData, imageName: imageNames[nameIndex]) { (error, url) in
+            var urls = [URL]()
+            StorageService.postImage(imageData: imagesData[0], imageName: imageNames[0]) { (error, url) in
                 if let error = error {
                     completion(error, nil)
                 }
                 if let url = url {
                     urls.append(url)
+                    StorageService.postImage(imageData: imagesData[1], imageName: imageNames[1]) { (error, url) in
+                        if let error = error {
+                            completion(error, nil)
+                        }
+                        if let url = url {
+                            urls.append(url)
+                            completion(nil, urls)
+                        }
+                    }
                 }
             }
-        }
-        completion(nil, urls)
+        
     }
     static public func postImage(imageData: Data, imageName: String, completion: @escaping (Error?, URL?) -> Void) {
         let metadata = StorageMetadata()

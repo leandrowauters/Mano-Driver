@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>243710323378-vsu710cuvtmdgiemknbr0dkigd1nm3nd.apps.googleusercontent.com</string>
+	<string>828071617279-fab6ljoatn86posqugccv312tcmlj8rp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.243710323378-vsu710cuvtmdgiemknbr0dkigd1nm3nd</string>
+	<string>com.googleusercontent.apps.828071617279-fab6ljoatn86posqugccv312tcmlj8rp</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBsWjFeknHJULn1WeFY_GaEIeswdtVH7U0</string>
+	<string>AIzaSyAvRw05-r_utGYDQWqG9aQet7fodciYeww</string>
 	<key>GCM_SENDER_ID</key>
-	<string>243710323378</string>
+	<string>828071617279</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Wauters.Mano-Driver</string>
+	<string>Mano-Driver</string>
 	<key>PROJECT_ID</key>
-	<string>mano-driver</string>
+	<string>mano-251523</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mano-driver.appspot.com</string>
+	<string>mano-251523.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:243710323378:ios:e199c59e2b8033ca6cb7ab</string>
+	<string>1:828071617279:ios:2978a7f2cdec9c744d62ca</string>
 	<key>DATABASE_URL</key>
-	<string>https://mano-driver.firebaseio.com</string>
+	<string>https://mano-251523.firebaseio.com</string>
 </dict>
 </plist>

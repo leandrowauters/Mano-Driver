@@ -12,19 +12,19 @@ import Firebase
 
 extension DBService {
     
-    static public var currentManoUser: ManoUser!
     
-    static public func createUser(manoUser: ManoUser, completion: @escaping (Error?) -> Void) {
-        DBService.firestoreDB.collection(ManoUserCollectionKeys.collectionKey).document(manoUser.userId).setData(
-            [ManoUserCollectionKeys.firstNameKey : manoUser.firstName,
-             ManoUserCollectionKeys.lastNameKey : manoUser.lastName,
-             ManoUserCollectionKeys.fullNameKey : manoUser.fullName,
-             ManoUserCollectionKeys.typeOfUserKey : manoUser.typeOfUser,
-             ManoUserCollectionKeys.userIdKey : manoUser.userId,
-             ManoUserCollectionKeys.cellPhoneKey : manoUser.cellPhone!,
-             ManoUserCollectionKeys.homeAddressKey : manoUser.homeAdress!,
-             ManoUserCollectionKeys.homeLatKey : manoUser.homeLat!,
-             ManoUserCollectionKeys.homeLonKey : manoUser.homeLon!
+    
+    static public func createUser(manoUser: ManoUserDriver, completion: @escaping (Error?) -> Void) {
+        DBService.firestoreDB.collection(ManoUserDriverCollectionKeys.collectionKey).document(manoUser.userId).setData(
+            [ManoUserDriverCollectionKeys.firstNameKey : manoUser.firstName,
+             ManoUserDriverCollectionKeys.lastNameKey : manoUser.lastName,
+             ManoUserDriverCollectionKeys.fullNameKey : manoUser.fullName,
+             ManoUserDriverCollectionKeys.typeOfUserKey : manoUser.typeOfUser,
+             ManoUserDriverCollectionKeys.userIdKey : manoUser.userId,
+             ManoUserDriverCollectionKeys.cellPhoneKey : manoUser.cellPhone!,
+             ManoUserDriverCollectionKeys.homeAddressKey : manoUser.homeAdress!,
+             ManoUserDriverCollectionKeys.homeLatKey : manoUser.homeLat!,
+             ManoUserDriverCollectionKeys.homeLonKey : manoUser.homeLon!
                 
                 
         ]) { (error) in
@@ -37,7 +37,7 @@ extension DBService {
     }
     
     static public func updateBio(userId: String, bioText: String, completion: @escaping (Error?) -> Void) {
-        DBService.firestoreDB.collection(ManoUserCollectionKeys.collectionKey).document(userId).updateData([ManoUserCollectionKeys.bioKey : bioText]) { (error) in
+        DBService.firestoreDB.collection(ManoUserDriverCollectionKeys.collectionKey).document(userId).updateData([ManoUserDriverCollectionKeys.bioKey : bioText]) { (error) in
             if let error = error {
                 completion(error)
             } else {
@@ -45,27 +45,16 @@ extension DBService {
             }
         }
     }
-    
-    static public func updateCarInfo(userId: String,make: String, model: String,state: String, plate: String,frontImage: String, backImage: String, completion: @escaping(Error?) -> Void) {
-        DBService.firestoreDB.collection(ManoUserCollectionKeys.collectionKey).document(userId).updateData([ManoUserCollectionKeys.carMakerModelKey : make, ManoUserCollectionKeys.carMakerModelKey : model,
-                                                                                                            ManoUserCollectionKeys.state : state, ManoUserCollectionKeys.licencePlateKey : plate, ManoUserCollectionKeys.carFrontImageKey : frontImage, ManoUserCollectionKeys.carBackImageKey : backImage]) { (error) in
-                                                  
-                                                                                        if let error = error {
-                                                                                                    completion(error)
-                                                                                        } else {
-                                                                                            print("user updated")
-                                                                                                                }
-        }
-    }
-    static public func fetchManoUser(userId: String, completion: @escaping (Error?, ManoUser?) -> Void) {
+
+    static public func fetchManoUser(userId: String, completion: @escaping (Error?, ManoUserDriver?) -> Void) {
         DBService.firestoreDB
-            .collection(ManoUserCollectionKeys.collectionKey)
-            .whereField(ManoUserCollectionKeys.userIdKey, isEqualTo: userId)
+            .collection(ManoUserDriverCollectionKeys.collectionKey)
+            .whereField(ManoUserDriverCollectionKeys.userIdKey, isEqualTo: userId)
             .getDocuments { (snapshot, error) in
                 if let error = error {
                     completion(error, nil)
                 } else if let snapshot = snapshot?.documents.first {
-                    let manoUser = ManoUser.init(dict: snapshot.data())
+                    let manoUser = ManoUserDriver.init(dict: snapshot.data())
                     completion(nil, manoUser)
                 } else {
                     completion(nil, nil)
@@ -73,9 +62,9 @@ extension DBService {
         }
     }
     
-    static public func deleteAccount(user: ManoUser, completion: @escaping (Error?) -> Void) {
+    static public func deleteAccount(user: ManoUserDriver, completion: @escaping (Error?) -> Void) {
         DBService.firestoreDB
-            .collection(ManoUserCollectionKeys.collectionKey)
+            .collection(ManoUserDriverCollectionKeys.collectionKey)
             .document(user.userId)
             .delete { (error) in
                 if let error = error {

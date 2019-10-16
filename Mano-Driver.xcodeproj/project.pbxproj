@@ -12,10 +12,12 @@
 		D596E55823553C2300FBDEDF /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E55723553C2300FBDEDF /* KeyboardNotification.swift */; };
 		D596E55E235624A000FBDEDF /* ViewController+ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E55D235624A000FBDEDF /* ViewController+ImageSource.swift */; };
 		D596E5602356332C00FBDEDF /* CarInfo+UpdateInfo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E55F2356332C00FBDEDF /* CarInfo+UpdateInfo+Extension.swift */; };
-		D596E5622356546C00FBDEDF /* ViewController+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E5612356546C00FBDEDF /* ViewController+Tap.swift */; };
+		D596E5622356546C00FBDEDF /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E5612356546C00FBDEDF /* ViewController+Extension.swift */; };
 		D596E564235658F700FBDEDF /* USStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E563235658F700FBDEDF /* USStates.swift */; };
 		D596E56723565B6D00FBDEDF /* PickerView+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E56523565B6D00FBDEDF /* PickerView+ViewController.swift */; };
 		D596E56823565B6D00FBDEDF /* PickerView+ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D596E56623565B6D00FBDEDF /* PickerView+ViewController.xib */; };
+		D596E56A2357ADFC00FBDEDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D596E5692357ADFC00FBDEDF /* GoogleService-Info.plist */; };
+		D596E56D2357B44900FBDEDF /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596E56C2357B44900FBDEDF /* AuthenticationServices.framework */; };
 		D5BA5640234FA8D900548924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA563F234FA8D900548924 /* AppDelegate.swift */; };
 		D5BA5642234FA8D900548924 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5641234FA8D900548924 /* SceneDelegate.swift */; };
 		D5BA5647234FA8D900548924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5BA5645234FA8D900548924 /* Main.storyboard */; };
@@ -30,7 +32,7 @@
 		D5BA5663234FBC6800548924 /* ColectionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5661234FBC6600548924 /* ColectionKeys.swift */; };
 		D5BA5664234FBC6800548924 /* DBService+ManoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */; };
 		D5BA5667234FBC8500548924 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5665234FBC8400548924 /* Ride.swift */; };
-		D5BA5668234FBC8500548924 /* ManoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5666234FBC8500548924 /* ManoUser.swift */; };
+		D5BA5668234FBC8500548924 /* ManoUserDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5666234FBC8500548924 /* ManoUserDriver.swift */; };
 		D5BA566A234FBCB900548924 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5669234FBCB900548924 /* StorageService.swift */; };
 		D5BA566D234FBCC600548924 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA566B234FBCC300548924 /* DBService.swift */; };
 		D5BA566E234FBCC600548924 /* DBService+Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA566C234FBCC500548924 /* DBService+Ride.swift */; };
@@ -40,7 +42,6 @@
 		D5BA5678234FBE1C00548924 /* MapsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA5677234FBE1C00548924 /* MapsHelper.swift */; };
 		D5BA567A2354D2C800548924 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA56792354D2C800548924 /* AuthService.swift */; };
 		D5BA567C2354D31400548924 /* IBDesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BA567B2354D31400548924 /* IBDesignableViews.swift */; };
-		D5BA567E2354D6EB00548924 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +51,13 @@
 		D596E55723553C2300FBDEDF /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
 		D596E55D235624A000FBDEDF /* ViewController+ImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ImageSource.swift"; sourceTree = "<group>"; };
 		D596E55F2356332C00FBDEDF /* CarInfo+UpdateInfo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarInfo+UpdateInfo+Extension.swift"; sourceTree = "<group>"; };
-		D596E5612356546C00FBDEDF /* ViewController+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Tap.swift"; sourceTree = "<group>"; };
+		D596E5612356546C00FBDEDF /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		D596E563235658F700FBDEDF /* USStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USStates.swift; sourceTree = "<group>"; };
 		D596E56523565B6D00FBDEDF /* PickerView+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PickerView+ViewController.swift"; sourceTree = "<group>"; };
 		D596E56623565B6D00FBDEDF /* PickerView+ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "PickerView+ViewController.xib"; sourceTree = "<group>"; };
+		D596E5692357ADFC00FBDEDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D596E56B2357B41500FBDEDF /* Mano-Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mano-Driver.entitlements"; sourceTree = "<group>"; };
+		D596E56C2357B44900FBDEDF /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		D5BA563C234FA8D900548924 /* Mano-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mano-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BA563F234FA8D900548924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5BA5641234FA8D900548924 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		D5BA5661234FBC6600548924 /* ColectionKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColectionKeys.swift; sourceTree = "<group>"; };
 		D5BA5662234FBC6800548924 /* DBService+ManoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+ManoUser.swift"; sourceTree = "<group>"; };
 		D5BA5665234FBC8400548924 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
-		D5BA5666234FBC8500548924 /* ManoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManoUser.swift; sourceTree = "<group>"; };
+		D5BA5666234FBC8500548924 /* ManoUserDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManoUserDriver.swift; sourceTree = "<group>"; };
 		D5BA5669234FBCB900548924 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D5BA566B234FBCC300548924 /* DBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		D5BA566C234FBCC500548924 /* DBService+Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBService+Ride.swift"; sourceTree = "<group>"; };
@@ -80,7 +84,6 @@
 		D5BA5677234FBE1C00548924 /* MapsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsHelper.swift; sourceTree = "<group>"; };
 		D5BA56792354D2C800548924 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D5BA567B2354D31400548924 /* IBDesignableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableViews.swift; sourceTree = "<group>"; };
-		D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7BAB7CF36AE24F55B6CCDF9 /* Pods-Mano-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mano-Driver.release.xcconfig"; path = "Target Support Files/Pods-Mano-Driver/Pods-Mano-Driver.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D596E56D2357B44900FBDEDF /* AuthenticationServices.framework in Frameworks */,
 				352BC552370A584749465F78 /* Pods_Mano_Driver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +112,7 @@
 		6622B2E9C0028E6E7C1B8489 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D596E56C2357B44900FBDEDF /* AuthenticationServices.framework */,
 				77033788A5EA114CF4BCE9E8 /* Pods_Mano_Driver.framework */,
 			);
 			name = Frameworks;
@@ -134,6 +139,7 @@
 		D5BA563E234FA8D900548924 /* Mano-Driver */ = {
 			isa = PBXGroup;
 			children = (
+				D596E56B2357B41500FBDEDF /* Mano-Driver.entitlements */,
 				D5BA564D234FA8DB00548924 /* Info.plist */,
 				D5BA567F2354E8BB00548924 /* app.settings */,
 				D5BA56802354E8E900548924 /* Controllers */,
@@ -152,9 +158,9 @@
 		D5BA567F2354E8BB00548924 /* app.settings */ = {
 			isa = PBXGroup;
 			children = (
-				D5BA567D2354D6EB00548924 /* GoogleService-Info.plist */,
 				D5BA563F234FA8D900548924 /* AppDelegate.swift */,
 				D5BA5641234FA8D900548924 /* SceneDelegate.swift */,
+				D596E5692357ADFC00FBDEDF /* GoogleService-Info.plist */,
 			);
 			path = app.settings;
 			sourceTree = "<group>";
@@ -208,7 +214,7 @@
 		D5BA56842354E99100548924 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D5BA5666234FBC8500548924 /* ManoUser.swift */,
+				D5BA5666234FBC8500548924 /* ManoUserDriver.swift */,
 				D5BA5665234FBC8400548924 /* Ride.swift */,
 			);
 			path = Model;
@@ -221,7 +227,7 @@
 				D5BA5671234FBD0D00548924 /* String+Extension.swift */,
 				D5BA566F234FBD0A00548924 /* ViewController+Alert.swift */,
 				D596E55D235624A000FBDEDF /* ViewController+ImageSource.swift */,
-				D596E5612356546C00FBDEDF /* ViewController+Tap.swift */,
+				D596E5612356546C00FBDEDF /* ViewController+Extension.swift */,
 				D596E56523565B6D00FBDEDF /* PickerView+ViewController.swift */,
 				D596E56623565B6D00FBDEDF /* PickerView+ViewController.xib */,
 			);
@@ -291,10 +297,10 @@
 			files = (
 				D5BA564C234FA8DB00548924 /* LaunchScreen.storyboard in Resources */,
 				D5BA565C234FB9A600548924 /* Login+Create+Storyboard.storyboard in Resources */,
-				D5BA567E2354D6EB00548924 /* GoogleService-Info.plist in Resources */,
 				D5BA5649234FA8DB00548924 /* Assets.xcassets in Resources */,
 				D5BA5647234FA8D900548924 /* Main.storyboard in Resources */,
 				D596E56823565B6D00FBDEDF /* PickerView+ViewController.xib in Resources */,
+				D596E56A2357ADFC00FBDEDF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,10 +370,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D596E5622356546C00FBDEDF /* ViewController+Tap.swift in Sources */,
+				D596E5622356546C00FBDEDF /* ViewController+Extension.swift in Sources */,
 				D5BA5664234FBC6800548924 /* DBService+ManoUser.swift in Sources */,
 				D5BA566A234FBCB900548924 /* StorageService.swift in Sources */,
-				D5BA5668234FBC8500548924 /* ManoUser.swift in Sources */,
+				D5BA5668234FBC8500548924 /* ManoUserDriver.swift in Sources */,
 				D5BA566E234FBCC600548924 /* DBService+Ride.swift in Sources */,
 				D596E56723565B6D00FBDEDF /* PickerView+ViewController.swift in Sources */,
 				D596E564235658F700FBDEDF /* USStates.swift in Sources */,
@@ -535,6 +541,7 @@
 			baseConfigurationReference = C5CA5D70EA7987F929AF6320 /* Pods-Mano-Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mano-Driver/Mano-Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ5CF8LT37;
 				INFOPLIST_FILE = "Mano-Driver/Info.plist";
@@ -554,6 +561,7 @@
 			baseConfigurationReference = F7BAB7CF36AE24F55B6CCDF9 /* Pods-Mano-Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mano-Driver/Mano-Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ5CF8LT37;
 				INFOPLIST_FILE = "Mano-Driver/Info.plist";

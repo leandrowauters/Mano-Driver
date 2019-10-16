@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ManoUserCollectionKeys {
-    static let collectionKey = "ManoUser"
+struct ManoUserDriverCollectionKeys {
+    static let collectionKey = "ManoUserDriver"
     static let firstNameKey = "firstName"
     static let lastNameKey = "lastName"
     static let fullNameKey = "fullName"
@@ -26,8 +26,8 @@ struct ManoUserCollectionKeys {
     static let numberOfRides = "numberOfRides"
     static let numberOfMiles = "numberOfMiles"
     static let licencePlateKey = "licencePlate"
-    static let carFrontImageKey = "carFrontImage"
-    static let carBackImageKey = "carBackImage"
+    static let carImage = "carImage"
+    static let userImage = "userImage"
     static let cellPhoneKey = "cellPhone"
     static let ridesKey = "rides"
     static let state = "state"

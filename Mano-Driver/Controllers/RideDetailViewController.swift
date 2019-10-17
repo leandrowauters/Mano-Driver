@@ -58,7 +58,7 @@ class RideDetailViewController: UIViewController {
 
 extension RideDetailViewController: RideStatusChangeDelegate {
     func didChangeStatus() {
-        
+
     }
     
     func errorChangingStatus(error: Error) {

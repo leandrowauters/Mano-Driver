@@ -33,12 +33,11 @@ class ManoLogoLabel: UILabel {
 class AlertView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = #colorLiteral(red: 0.003921568627, green: 0.3019607843, blue: 0.4431372549, alpha: 1)
-        layer.cornerRadius = 30
-        layer.borderWidth = 2
-        layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        layer.cornerRadius = 15
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 0.2549019608, green: 0.2549019608, blue: 0.2549019608, alpha: 1)
         clipsToBounds = true
-        
     }
 }
 
@@ -52,13 +51,17 @@ class BorderView: UIView {
     }
 }
 
+
+
+
+
 @IBDesignable
 class BorderButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        
+        titleLabel?.textAlignment = .center
     }
 }
 @IBDesignable

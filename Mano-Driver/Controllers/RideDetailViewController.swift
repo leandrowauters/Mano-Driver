@@ -10,6 +10,8 @@ import UIKit
 
 class RideDetailViewController: UIViewController {
 
+    weak var ride: Ride!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

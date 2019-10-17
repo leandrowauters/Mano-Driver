@@ -50,7 +50,10 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        guard let destination = segue.destination as? RideDetailViewController else {
+            fatalError()
+        }
+        destination.ride = selectedRide
     }
     
     @IBAction func moreButtonPressed(_ sender: Any) {
@@ -94,6 +97,7 @@ extension AvailableRides: GMSMapViewDelegate {
         mapView.setupMap(position: marker.position, zoom: 14)
         let index = Int(marker.title!)!
         let selectedRide = rides[index]
+        self.selectedRide = selectedRide
         passangerAddress.text = selectedRide.pickupAddress
         passangerName.text = selectedRide.passanger
         mapDetailView.isHidden = false

@@ -9,13 +9,22 @@ import UIKit
 import GoogleMaps
 
 class AvailableRides: UIViewController, LocationManagerDelegate {
+    func didGetLocation(location: CLLocationCoordinate2D) {
+                mapView.setupMap(position: location, zoom: 12)
+    }
+    
 
     
 
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var mapDetailView: UIView!
+    @IBOutlet weak var passangerName: UILabel!
+    @IBOutlet weak var passangerAddress: UILabel!
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let locationManager = LocationManager()
+    private var selectedRide: Ride?
     weak var locationManagerDelegate: LocationManagerDelegate?
     
     let auth = AuthService()
@@ -24,7 +33,9 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
     
     private var rides = [Ride]() {
         didSet {
-            print("DidSet WORK!!")
+            DispatchQueue.main.async {
+                self.mapView.addMarkers(rides: self.rides)
+            }
         }
     }
     
@@ -35,16 +46,18 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
         auth.autherserviceSignInDelegate = self
         auth.signIn(userId: userId!)
         dbService.rideFetchingDelegate = self
+        mapView.delegate = self
     }
     
-    
-    func setupUI() {
-        locationManager.setupMap(mapView: mapView)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
     
-    func didUpdateLocation(_: Bool) {
-       setupUI()
+    @IBAction func moreButtonPressed(_ sender: Any) {
+        
     }
+    
+
     
 
 
@@ -74,4 +87,17 @@ extension AvailableRides: RideFetchingDelegate {
     }
     
     
+}
+
+extension AvailableRides: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.setupMap(position: marker.position, zoom: 14)
+        let index = Int(marker.title!)!
+        let selectedRide = rides[index]
+        passangerAddress.text = selectedRide.pickupAddress
+        passangerName.text = selectedRide.passanger
+        mapDetailView.isHidden = false
+        
+        return true
+    }
 }

@@ -25,4 +25,8 @@ extension Date {
         }
         return false
     }
+    
+    func isTodayOrTomorrow()  -> Bool {
+        return Calendar.current.isDateInToday(self) || Calendar.current.isDateInTomorrow(self)
+    }
 }

@@ -38,4 +38,16 @@ extension DBService {
             }
         }
     }
+    
+    public func changeRideStatus(ride: Ride, rideStatus: RideStatus) {
+        DBService.firestoreDB.collection(RideCollectionKeys.collectionKey).document(ride.rideId).updateData([RideCollectionKeys.rideStatusKey : rideStatus.rawValue]) { [weak self]  error in
+            if let error = error {
+                self?.rideStatusChangeDelegate?.errorChangingStatus(error: error)
+            } else {
+                self?.rideStatusChangeDelegate?.didChangeStatus()
+            }
+            
+        
+        }
+    }
 }

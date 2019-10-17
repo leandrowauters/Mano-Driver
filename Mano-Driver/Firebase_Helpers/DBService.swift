@@ -17,11 +17,16 @@ protocol RideFetchingDelegate: AnyObject {
     func errorFetchingRides(error: Error)
 }
 
+protocol RideStatusChangeDelegate: AnyObject {
+    func didChangeStatus()
+    func errorChangingStatus(error: Error)
+}
 
 
 final class DBService {
     
     weak var rideFetchingDelegate: RideFetchingDelegate?
+    weak var rideStatusChangeDelegate: RideStatusChangeDelegate?
     
     public static var firestoreDB: Firestore = {
         let db = Firestore.firestore()

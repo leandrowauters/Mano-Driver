@@ -1,5 +1,5 @@
 //
-//  EventKitHelper.swift
+//  CalendarHelper.swift
 //  Mano-Driver
 //
 //  Created by Leandro Wauters on 10/17/19.
@@ -10,41 +10,49 @@ import Foundation
 import EventKit
 
 protocol CalendarDelegate: AnyObject {
-    func didAddToCalendar()
+    func didAddToCalendar(calendar: String)
+    func errorAddingToCalendar(error: AppError)
 }
 
-class EventKitHelper {
+class CalendarHelper {
 
-    public func addToCalendar(ride: Ride, completion: @escaping(AppError?, String?) -> Void) {
+    weak var calendarDelegate: CalendarDelegate?
+    
+    public func addToCalendar(ride: Ride) {
         let eventStore = EKEventStore()
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
-            insertEvent(store: eventStore, ride: ride) { (error, calendar) in
-                completion(error,calendar)
-            }
+            addEvent(eventStore: eventStore, ride: ride)
             
         case .denied:
-            print("Access denied")
+            calendarDelegate?.errorAddingToCalendar(error: .calendarError("Access Denied"))
         case .notDetermined:
             // 3
             eventStore.requestAccess(to: .event, completion:
                 {[weak self] (granted: Bool, error: Error?) -> Void in
                     if let error = error {
-                      completion(.calendarError(error.localizedDescription), nil)
+                        self?.calendarDelegate?.errorAddingToCalendar(error: .calendarError(error.localizedDescription))
                     }
                     if granted {
-                        self!.insertEvent(store: eventStore, ride: ride, completion: { (error, calendar) in
-                            completion(nil, calendar)
-                        })
-                        
+                        self?.addEvent(eventStore: eventStore, ride: ride)
                     }
             })
         default:
-            print("Case default")
+            calendarDelegate?.errorAddingToCalendar(error: .calendarError("Error Unknown"))
         }
     }
     
-    func insertEvent(store: EKEventStore, ride: Ride, completion: (AppError?, String?) -> Void) {
+    func addEvent(eventStore: EKEventStore, ride: Ride) {
+        createEvent(store: eventStore, ride: ride) { [weak self] error, calendar in
+            if let error = error {
+                self?.calendarDelegate?.errorAddingToCalendar(error: error)
+            }
+            if let calendar = calendar {
+                self?.calendarDelegate?.didAddToCalendar(calendar: calendar)
+            }
+        }
+    }
+    func createEvent(store: EKEventStore, ride: Ride, completion: (AppError?, String?) -> Void) {
         // 1
         guard let calendar = store.defaultCalendarForNewEvents else {
             completion(.calendarError("No calendar found"), nil)

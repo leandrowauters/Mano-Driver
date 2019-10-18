@@ -49,10 +49,13 @@ class AvailableRides: UIViewController, LocationManagerDelegate {
         mapView.delegate = self
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? RideDetailViewController else {
             fatalError()
         }
+        mapDetailView.isHidden = true
         destination.ride = selectedRide
     }
     

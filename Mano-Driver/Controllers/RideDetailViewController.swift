@@ -12,6 +12,7 @@ class RideDetailViewController: UIViewController {
 
     weak var ride: Ride!
     let dbService = DBService()
+    let calendarHelper = CalendarHelper()
     @IBOutlet weak var pickupDropoffAddressLabel: UILabel!
     @IBOutlet weak var appointmentAddressLabel: UILabel!
     
@@ -20,6 +21,7 @@ class RideDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dbService.rideStatusChangeDelegate = self
+        calendarHelper.calendarDelegate = self
         setupUI()
     }
     
@@ -33,7 +35,7 @@ class RideDetailViewController: UIViewController {
     }
     
     @IBAction func acceptRequestPressed(_ sender: Any) {
-        showTwoButtonAlert(title: "Accept Ride?", firstButtonTitle: "Yes", secondButtonTitle: "No", message: "\(ride.passanger) will be notified") { [weak self] alertAction in
+        showTwoButtonAlert(title: "Accept Ride?", firstButtonTitle: "No", secondButtonTitle: "Yes", message: "\(ride.passanger) will be notified") { [weak self] alertAction in
             if alertAction.title == "No" {
                 
             } else {
@@ -58,7 +60,13 @@ class RideDetailViewController: UIViewController {
 
 extension RideDetailViewController: RideStatusChangeDelegate {
     func didChangeStatus() {
-
+        showTwoButtonAlert(title: "Ride accepted", firstButtonTitle: "Add to calendar", secondButtonTitle: "Continue", message: "\(ride.appointmentDate)\n \(ride.pickupAddress)") { (alertAction) in
+            if alertAction.title == "Add to calendar" {
+                self.calendarHelper.addToCalendar(ride: self.ride)
+            } else {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     func errorChangingStatus(error: Error) {
@@ -66,4 +74,21 @@ extension RideDetailViewController: RideStatusChangeDelegate {
     }
     
     
+}
+
+extension RideDetailViewController: CalendarDelegate {
+    func didAddToCalendar(calendar: String) {
+        showAlert(title: "Added to calendar", message: nil) { (action) in
+            self.dismiss(animated: true)
+        }
+        
+        
+        
+    }
+    
+    func errorAddingToCalendar(error: AppError) {
+        showAlert(title: error.errorMessage(), message: nil) { (action) in
+            self.dismiss(animated: true)
+        }
+    }
 }

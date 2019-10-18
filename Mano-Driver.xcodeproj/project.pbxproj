@@ -10,9 +10,7 @@
 		352BC552370A584749465F78 /* Pods_Mano_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77033788A5EA114CF4BCE9E8 /* Pods_Mano_Driver.framework */; };
 		D568DD872357E0FE005C0F3C /* GMSMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD862357E0FE005C0F3C /* GMSMapView+Extension.swift */; };
 		D568DD8F2358B7E6005C0F3C /* RideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD8E2358B7E6005C0F3C /* RideDetailViewController.swift */; };
-		D568DD922358F6FF005C0F3C /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD902358F6FF005C0F3C /* AlertViewController.swift */; };
-		D568DD932358F6FF005C0F3C /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D568DD912358F6FF005C0F3C /* AlertViewController.xib */; };
-		D568DD952359030A005C0F3C /* EventKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD942359030A005C0F3C /* EventKitHelper.swift */; };
+		D568DD952359030A005C0F3C /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD942359030A005C0F3C /* CalendarHelper.swift */; };
 		D568DD97235904FA005C0F3C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568DD96235904FA005C0F3C /* AppError.swift */; };
 		D596E5562354EDA600FBDEDF /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */; };
 		D596E55823553C2300FBDEDF /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596E55723553C2300FBDEDF /* KeyboardNotification.swift */; };
@@ -55,9 +53,7 @@
 		C5CA5D70EA7987F929AF6320 /* Pods-Mano-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mano-Driver.debug.xcconfig"; path = "Target Support Files/Pods-Mano-Driver/Pods-Mano-Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		D568DD862357E0FE005C0F3C /* GMSMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Extension.swift"; sourceTree = "<group>"; };
 		D568DD8E2358B7E6005C0F3C /* RideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailViewController.swift; sourceTree = "<group>"; };
-		D568DD902358F6FF005C0F3C /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
-		D568DD912358F6FF005C0F3C /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
-		D568DD942359030A005C0F3C /* EventKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKitHelper.swift; sourceTree = "<group>"; };
+		D568DD942359030A005C0F3C /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		D568DD96235904FA005C0F3C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
 		D596E55723553C2300FBDEDF /* KeyboardNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
@@ -153,6 +149,7 @@
 			children = (
 				D596E56B2357B41500FBDEDF /* Mano-Driver.entitlements */,
 				D5BA564D234FA8DB00548924 /* Info.plist */,
+				D596E5692357ADFC00FBDEDF /* GoogleService-Info.plist */,
 				D5BA567F2354E8BB00548924 /* app.settings */,
 				D5BA56802354E8E900548924 /* Controllers */,
 				D5BA56812354E8FF00548924 /* Storyboards */,
@@ -173,7 +170,6 @@
 			children = (
 				D5BA563F234FA8D900548924 /* AppDelegate.swift */,
 				D5BA5641234FA8D900548924 /* SceneDelegate.swift */,
-				D596E5692357ADFC00FBDEDF /* GoogleService-Info.plist */,
 			);
 			path = app.settings;
 			sourceTree = "<group>";
@@ -187,8 +183,6 @@
 				D5BA565E234FB9DF00548924 /* CreateAccountViewController.swift */,
 				D596E5552354EDA600FBDEDF /* CarInfoViewController.swift */,
 				D596E55F2356332C00FBDEDF /* CarInfo+UpdateInfo+Extension.swift */,
-				D568DD902358F6FF005C0F3C /* AlertViewController.swift */,
-				D568DD912358F6FF005C0F3C /* AlertViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,7 +205,7 @@
 				D5BA5661234FBC6600548924 /* ColectionKeys.swift */,
 				D596E55723553C2300FBDEDF /* KeyboardNotification.swift */,
 				D596E563235658F700FBDEDF /* USStates.swift */,
-				D568DD942359030A005C0F3C /* EventKitHelper.swift */,
+				D568DD942359030A005C0F3C /* CalendarHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -319,7 +313,6 @@
 				D5BA5647234FA8D900548924 /* Main.storyboard in Resources */,
 				D596E56823565B6D00FBDEDF /* PickerView+ViewController.xib in Resources */,
 				D596E56A2357ADFC00FBDEDF /* GoogleService-Info.plist in Resources */,
-				D568DD932358F6FF005C0F3C /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +395,6 @@
 				D5BA5673234FBD0D00548924 /* Date+Extension.swift in Sources */,
 				D568DD8F2358B7E6005C0F3C /* RideDetailViewController.swift in Sources */,
 				D5BA567A2354D2C800548924 /* AuthService.swift in Sources */,
-				D568DD922358F6FF005C0F3C /* AlertViewController.swift in Sources */,
 				D5BA565F234FB9DF00548924 /* LoginViewController.swift in Sources */,
 				D5BA5672234FBD0D00548924 /* ViewController+Alert.swift in Sources */,
 				D596E5562354EDA600FBDEDF /* CarInfoViewController.swift in Sources */,
@@ -415,7 +407,7 @@
 				D5BA5640234FA8D900548924 /* AppDelegate.swift in Sources */,
 				D5BA566D234FBCC600548924 /* DBService.swift in Sources */,
 				D5BA5656234FAB9700548924 /* AvailableRides.swift in Sources */,
-				D568DD952359030A005C0F3C /* EventKitHelper.swift in Sources */,
+				D568DD952359030A005C0F3C /* CalendarHelper.swift in Sources */,
 				D5BA565A234FAE2000548924 /* APIClient.swift in Sources */,
 				D596E55E235624A000FBDEDF /* ViewController+ImageSource.swift in Sources */,
 				D596E5602356332C00FBDEDF /* CarInfo+UpdateInfo+Extension.swift in Sources */,
